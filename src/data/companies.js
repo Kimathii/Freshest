@@ -47,48 +47,47 @@ const companies = [
   },
 
 
-  // {
-  //   store: "Walmart",
-  //   name: "Walmart",
-  //   slogan: "Walmart.com",
-  //   phone: "(800) 925-6278",
-  //   locations: [
-  //     { address: "111 Yale St, Houston, TX 77007", state: "TX", zip: "77007" },
-  //     { address: "2391 S Wayside Dr, Houston, TX 77023", state: "TX", zip: "77023" },
-  //     { address: "1980 Freedom Pkwy, Washington, IL 61571", state: "IL", zip: "61571" },
-  //     { address: "4252 Highway 54, Osage Beach, MO 65065", state: "MO", zip: "65065" },
-  //     { address: "100 N Main St, Manville, NJ 08835", state: "NJ", zip: "08835" },
-  //     { address: "2827 S Buckner Blvd, Dallas, TX 75227", state: "TX", zip: "75227" },
-  //     { address: "6001 Mahoning Ave, Austintown, OH 44515", state: "OH", zip: "44515" },
-  //     { address: "1131 N Beale Rd, Marysville, CA 95901", state: "CA", zip: "95901" }
-  //   ],
-  //   products: [
-  //     { name: "Vital Proteins Gummies", price: 29.99 },
-  //     { name: "Orgain Organic Protein Powder (Chocolate/Vanilla)", price: 21.97 },
-  //     { name: "IBgard Abdominal Comfort Digestive Supplement", price: 39.99 },
-  //     { name: "Schwarzkopf Keratin Color Hair Color (average)", price: 11.97 },
-  //     { name: "Garden of Life Raw Organic Protein Powder", price: 35.69 },
-  //     { name: "Colgate Holiday Gift Set", price: 14.88 },
-  //     { name: "Rold Gold Pretzels (select varieties)", price: 3.98 },
-  //     { name: "Boost High Protein", price: 19.97 },
-  //     { name: "Filtrete MPR Refillable Air Filter Starter Kit", price: 89.99 }
-  //   ]
-  // //     { name: "Royal Canin Size Health Nutrition Mini Adult Dry Dog Food (8.8 lb)", price: 52.99 },
-  // // { name: "Royal Canin Size Health Nutrition Medium Adult Dry Dog Food (15 lb)", price: 74.99 },
-  // // { name: "Royal Canin Size Health Nutrition Maxi Adult Dry Dog Food (30 lb)", price: 119.99 },
-  // // { name: "Royal Canin Breed Health Nutrition German Shepherd Adult Dry Dog Food (30 lb)", price: 134.99 },
-  // //  { name: "Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food (30 lb)", price: 129.99 }
-  // // { name: "Royal Canin Breed Health Nutrition French Bulldog Adult Dry Dog Food (12 lb)", price: 89.99 },
-  // // { name: "Royal Canin Breed Health Nutrition Chihuahua Adult Dry Dog Food (6 lb)", price: 49.99 },
-  // // { name: "Royal Canin Veterinary Diet Gastrointestinal Low Fat Dry Dog Food (24 lb)", price: 101.99 },
-  // // { name: "Royal Canin Veterinary Diet Hydrolyzed Protein Adult HP Dry Dog Food (24 lb)", price: 107.99 },
-  // // { name: "Royal Canin Veterinary Diet Renal Support Dry Dog Food (24 lb)", price: 104.99 },
-  // // { name: "Royal Canin Calm Adult Dry Dog Food (24 lb)", price: 99.99 },
-  // // { name: "Royal Canin Adult Sensitive Stomach Dry Dog Food (24 lb)", price: 97.99 },
-  // // { name: "Royal Canin Puppy Large Breed Dry Dog Food (30 lb)", price: 103.99 },
-  // // { name: "Royal Canin Puppy Medium Breed Dry Dog Food (22 lb)", price: 92.99 },
-  // // { name: "Royal Canin Puppy Small Breed Dry Dog Food (8.8 lb)", price: 54.99 },
-  // },
+  {
+    store: "Target",
+    name: "Target",
+    slogan: "EXPECT MORE, PAY LESS",
+    phone: "(800) 925-6278",
+    locations: [
+      { address: "111 Yale St, Houston, TX 77007", state: "TX", zip: "77007" },
+      { address: "2391 S Wayside Dr, Houston, TX 77023", state: "TX", zip: "77023" },
+      { address: "1980 Freedom Pkwy, Washington, IL 61571", state: "IL", zip: "61571" },
+      { address: "4252 Highway 54, Osage Beach, MO 65065", state: "MO", zip: "65065" },
+      { address: "100 N Main St, Manville, NJ 08835", state: "NJ", zip: "08835" },
+      { address: "2827 S Buckner Blvd, Dallas, TX 75227", state: "TX", zip: "75227" },
+      { address: "6001 Mahoning Ave, Austintown, OH 44515", state: "OH", zip: "44515" },
+      { address: "1131 N Beale Rd, Marysville, CA 95901", state: "CA", zip: "95901" }
+    ],
+    products: [
+      { "name": "Tylenol Proactive Support* Muscle & Joint Supplements 30 Count", "price": 19.99 },
+      { "name": "Tylenol Proactive Support* Muscle & Joint + Stress Supplements 30 Count", "price": 19.99 },
+      // 
+      { "name": "Honest Company Flushable Wipes, 126 Count (Plant‑Based, Fragrance‑Free)", "price": 10.97 },
+      { "name": "Honest Company Flushable Wipes, 126 Count (Tropical Leaves)", "price": 10.99 },
+      { "name": "Honest Company Flushable Wipes, 42 Count (Plant‑Based, Fragrance‑Free)", "price": 6.00 },
+      { "name": "Honest Company Flushable Wipes, 84 Count (2×42 Pack)", "price": 14.00 }
+    ]
+  },
+  // { name: "Royal Canin Size Health Nutrition Mini Adult Dry Dog Food (8.8 lb)", price: 52.99 },
+  // { name: "Royal Canin Size Health Nutrition Medium Adult Dry Dog Food (15 lb)", price: 74.99 },
+  // { name: "Royal Canin Size Health Nutrition Maxi Adult Dry Dog Food (30 lb)", price: 119.99 },
+  // { name: "Royal Canin Breed Health Nutrition German Shepherd Adult Dry Dog Food (30 lb)", price: 134.99 },
+  // { name: "Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food (30 lb)", price: 129.99 }
+  // { name: "Royal Canin Breed Health Nutrition French Bulldog Adult Dry Dog Food (12 lb)", price: 89.99 },
+  // { name: "Royal Canin Breed Health Nutrition Chihuahua Adult Dry Dog Food (6 lb)", price: 49.99 },
+  // { name: "Royal Canin Veterinary Diet Gastrointestinal Low Fat Dry Dog Food (24 lb)", price: 101.99 },
+  // { name: "Royal Canin Veterinary Diet Hydrolyzed Protein Adult HP Dry Dog Food (24 lb)", price: 107.99 },
+  // { name: "Royal Canin Veterinary Diet Renal Support Dry Dog Food (24 lb)", price: 104.99 },
+  // { name: "Royal Canin Calm Adult Dry Dog Food (24 lb)", price: 99.99 },
+  // { name: "Royal Canin Adult Sensitive Stomach Dry Dog Food (24 lb)", price: 97.99 },
+  // { name: "Royal Canin Puppy Large Breed Dry Dog Food (30 lb)", price: 103.99 },
+  // { name: "Royal Canin Puppy Medium Breed Dry Dog Food (22 lb)", price: 92.99 },
+  // { name: "Royal Canin Puppy Small Breed Dry Dog Food (8.8 lb)", price: 54.99 },
+
 
 
 
@@ -140,62 +139,43 @@ const companies = [
   //   ]
   // },
 
-  // {
-  //   store: "Petco",
-  //   name: "Petco",
-  //   slogan: "Where Pet Lovers Shop.",
-  //   phone: "(800) 672-4399",
-  //   locations: [
-  //     { address: "450 S Orange Ave, Orlando, FL 32801", state: "FL" },
-  //     { address: "800 N Magnolia Ave, Orlando, FL 32803", state: "FL" },
-  //     { address: "25-01 Jackson Ave, Long Island City, NY 11101", state: "NY" },
-  //     { address: "139 Flatbush Ave, Brooklyn, NY 11217", state: "NY" },
-  //     { address: "88-01 Queens Blvd, Elmhurst, NY 11373", state: "NY" },
-  //     { address: "255 Greenwich St, New York, NY 10007", state: "NY" },
-  //     { address: "445 Albee Square W, Brooklyn, NY 11201", state: "NY" },
-  //     { address: "40-25 82nd St, Elmhurst, NY 11105", state: "NY" },
-  //     { address: "700 Exterior St, Bronx, NY 10451", state: "NY" },
-  //     { address: "600 Broadway, New York, NY 10012", state: "NY" },
-  //     { address: "112 W 34th St, New York, NY 10120", state: "NY" },
-  //     { address: "400 Grand St, New York, NY 10002", state: "NY" },
-  //     { address: "150 E 86th St, New York, NY 10028", state: "NY" },
-  //     { address: "500 E 14th St, New York, NY 10009", state: "NY" },
-  //     { address: "1201 3rd Ave, New York, NY 10021", state: "NY" },
-  //     { address: "795 Columbus Ave, New York, NY 10025", state: "NY" },
-  //     { address: "237 W 42nd St, New York, NY 10036", state: "NY" },
-  //     { address: "512 2nd Ave, New York, NY 10016", state: "NY" },
-  //     { address: "815 Hutchinson River Pkwy, Bronx, NY 10465", state: "NY" },
-  //     { address: "40 W 225th St #50, Bronx, NY 10463", state: "NY" },
-  //     { address: "22-11 31st St, Astoria, NY 11105", state: "NY" },
-  //     { address: "10 Union Sq E, New York, NY 10003", state: "NY" },
-  //     { address: "215 E Fordham Rd, Bronx, NY 10458", state: "NY" },
-  //     { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
-  //     { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
-  //     { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
-  //     { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
-  //     { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
-  //     { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
-  //     { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
-  //     { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
-  //     { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
-  //     { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
-  //   ],
-  //   products: [
-  //     { name: "Royal Canin Probiotics, 30 ct", price: 49.99 },
+  {
+    store: "Walmart",
+    name: "Walmart",
+    slogan: "",
+    phone: "(800) 672-4399",
+    locations: [
+      { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
+      { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
+      { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
+      { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
+      { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
+      { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
+      { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
+      { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
+      { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
+      { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
+    ],
+    products: [
+      { "name": "Native Deodorant Stick Coconut & Vanilla (aluminum-free)", "price": 12.99 },
+      { "name": "Native Sensitive Deodorant Sea Salt & Cedar (baking-soda-free)", "price": 12.99 },
+      { "name": "Native Plastic-Free Deodorant", "price": 14.99 },
+      { "name": "Native Deodorant Black Oak & Amber", "price": 12.99 },
+      { "name": "Native Body Spray", "price": 10.99 },
 
-  //     { name: "Royal Canin Puppy Immunity & Digestion Chews Pouch, 5.2 oz", price: 17.99 },
-  //     { name: "Royal Canin Adult Digestive Support Chews Pouch, 8.5 oz", price: 18.99 },
-  //     { name: "Royal Canin Adult Skin & Coat Chews Pouch, 8.5 oz", price: 18.99 },
-  //     { name: "Royal Canin Adult Joint Support Chews Pouch, 8.5 oz", price: 18.99 },
+      { "name": "Olay Regenerist (anti-aging moisturizer)", "price": 24.99 },
+      { "name": "Olay Total Effects (7-in-1 daily moisturizer)", "price": 16.99 },
+      { "name": "Olay Retinol24 (night treatment)", "price": 28.99 },
+      { "name": "Olay Vitamin C + Peptide24 (brightening)", "price": 29.99 },
+      { "name": "Olay Complete (daily moisturizer)", "price": 11.99 },
 
-  //     { name: "Royal Canin Large Breed Adult Dry Dog Food 30 lb", price: 119.99 },
-  //     { name: "Royal Canin Medium Breed Adult Dry Dog Food 30 lb", price: 117.99 },
-  //     { name: "Royal Canin Small Breed Adult Dry Dog Food 30 lb", price: 115.99 },
-  //     { name: "Royal Canin Labrador Retriever Adult Dry Dog Food 30 lb", price: 129.99 },
-  //     { name: "Royal Canin German Shepherd Adult Dry Dog Food 30 lb", price: 139.99 },
-  //     { name: "Royal Canin Pug Adult Dry Dog Food 10 lb", price: 61.99 },
-  //   ]
-  // },
+      { "name": "Old Spice High Endurance Deodorant", "price": 5.99 },
+      { "name": "Old Spice Red Collection Deodorant", "price": 6.99 },
+      { "name": "Old Spice Wild Collection Body Wash", "price": 6.99 },
+      { "name": "Old Spice Total Body Deodorant", "price": 12.99 }
+
+    ]
+  },
 
   //     {
   //     store: "Eukanuba Pet Food",
@@ -233,32 +213,38 @@ const companies = [
   // { name: "Royal Canin Puppy Small Breed Dry Dog Food (8.8 lb)", price: 54.99 },
   //     ]
   //   },
-  //   {
-  //     store: "Pure Encapsulations",
-  //     name: "The Vitamin Shoppe",
-  //     slogan: "Everyone is deserving of good health",
-  //     phone: "(203) 877-4281",
-  //     locations: [
-  // { address: "150 E 42nd St, New York, NY 10017", state: "NY" },
-  // { address: "250 Summer St, Boston, MA 02210", state: "MA" },
-  // { address: "600 N Michigan Ave, Chicago, IL 60611", state: "IL" }
-  //     ],
-  //     products: [
+  {
+    store: "WholeFoods",
+    name: "WholeFoods",
+    slogan: "",
+    phone: "(203) 877-4281",
+    locations: [
+      { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
+{ address: "450 W 33rd St, New York, NY 10001", state: "NY" },
+{ address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
+{ address: "66 Broadway, New York, NY 10005", state: "NY" },
+{ address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
+{ address: "1095 6th Ave, New York, NY 10036", state: "NY" },
+{ address: "250 7th Ave, New York, NY 10001", state: "NY" },
+{ address: "301 W 50th St, New York, NY 10019", state: "NY" },
+{ address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
+{ address: "226 E 57th St, New York, NY 10022", state: "NY" }
 
-  //   { name: "Pure Encapsulations Magnesium (Glycinate)", price: 39.99 },
-  //   { name: "Pure Encapsulations O.N.E.™ Multivitamin", price: 49.99 },
-  //   { name: "Pure Encapsulations Vitamin D3 125 mcg (5,000 IU)", price: 29.99 },
-  //   { name: "Pure Encapsulations Quercetin 120 Capsules", price: 34.99 },
-  //   { name: "Pure Encapsulations Digestive Enzymes Ultra", price: 37.99 },
-  //   { name: "Pure Encapsulations NAC (N-Acetyl-L-Cysteine) 600 mg", price: 31.99 },
-  //   { name: "Pure Encapsulations Zinc 30", price: 19.99 },
-  //   { name: "Pure Encapsulations Adrenal 60 Capsules", price: 24.99 },
-  //   { name: "Pure Encapsulations Ashwagandha 60 Capsules", price: 27.99 },
-  //   { name: "Pure Encapsulations DHEA 10 mg", price: 21.99 },
-  //   { name: "Pure Encapsulations Probiotic G.I.", price: 42.99 },
-  //   { name: "Pure Encapsulations Liposomal Glutathione", price: 59.99 }
-  // ]
-  //   },
+    ],
+    products: [
+      { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
+      { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
+      { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
+      { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
+      { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
+// 
+      { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
+      { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
+      { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
+      { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
+      { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
+    ]
+  },
 
 
   // {
@@ -281,74 +267,28 @@ const companies = [
   //   ]
   // },
 
-  // {
-  //   store: "Dog Food",
-  //   name: "Petco",
-  //   slogan: "Where Pet Lovers Shop.",
-  //   phone: "(877) 738-6742",
-  //   locations: [
-  //     { address: "860 Broadway, New York, NY 10003", state: "NY" },
-  //     { address: "9910 Mission Gorge Rd, San Diego, CA 92120", state: "CA" },
-  //     { address: "3040 N Broadway St, Chicago, IL 60657", state: "IL" },
-  //     { address: "4295 Buckhead Loop NE, Atlanta, GA 30342", state: "GA" },
-  //     { address: "4600 Shelbyville Rd, Louisville, KY 40207", state: "KY" },
-  //     { address: "191 Outer Loop, Louisville, KY 40214", state: "KY" },
-  //     { address: "5000 Shelbyville Rd, Louisville, KY 40207", state: "KY" },
-  //     { address: "1960 W Broadway, Louisville, KY 40203", state: "KY" },
-  //     { address: "150 E 42nd St, New York, NY 10017", state: "NY" },
-  //     { address: "250 Summer St, Boston, MA 02210", state: "MA" },
-  //     { address: "600 N Michigan Ave, Chicago, IL 60611", state: "IL" },
-  //     { address: "3411 Bardstown Rd, Louisville, KY 40218", state: "KY" },
-  //     { address: "12900 Shelbyville Rd, Louisville, KY 40243", state: "KY" },
-  //     { address: "4101 Towne Center Dr, Louisville, KY 40241", state: "KY" },
-  //     { address: "12301 Shelbyville Rd, Louisville, KY 40243", state: "KY" },
-  //     { address: "1225 Concord Ave, Concord, CA 94520", state: "CA" },
-  //     { address: "8250 Power Inn Rd, Sacramento, CA 95828", state: "CA" },
-  //     { address: "6336 College Grove Way, San Diego, CA 92115", state: "CA" },
-  //     { address: "150 E 42nd St, New York, NY 10017", state: "NY" },
-  //     { address: "250 Summer St, Boston, MA 02210", state: "MA" },
-  //     { address: "600 N Michigan Ave, Chicago, IL 60611", state: "IL" },
-  //     { address: "7147 Greenback Ln, Citrus Heights, CA 95621", state: "CA" }
-  //   ],
-  //   products: [
-  //     { name: "Cesar Warm Bowls Chicken & Vegetable Medley Wet Dog Food", price: 2.49 },
-  //     { name: "Cesar Warm Bowls Beef Stew Wet Dog Food", price: 2.49 },
-  //     { name: "Cesar Warm Bowls Turkey & Sweet Potato Wet Dog Food", price: 2.49 },
-  //     { name: "Cesar Warm Bowls Chicken & Rice Wet Dog Food", price: 2.49 },
-  //     { name: "Cesar Wholesome Bowls Chicken, Brown Rice & Vegetables Wet Dog Food", price: 2.69 },
-  //     { name: "Cesar Wholesome Bowls Beef, Barley & Vegetables Wet Dog Food", price: 2.69 },
-  //     { name: "Cesar Wholesome Bowls Turkey & Sweet Potato Wet Dog Food", price: 2.69 },
-  //     { name: "Cesar Simply Crafted Chicken & Sweet Potato Wet Dog Food", price: 2.99 },
-  //     { name: "Cesar Simply Crafted Beef & Potato Wet Dog Food", price: 2.99 },
-  //     { name: "Cesar Simply Crafted Chicken, Carrots & Green Beans Wet Dog Food", price: 2.99 },
-  //     { name: "Cesar Wholesome Meals Grilled Chicken Wet Dog Food Tray", price: 1.49 },
-  //     { name: "Cesar Wholesome Meals Beef Recipe Wet Dog Food Tray", price: 1.49 },
-  //     { name: "Cesar Wholesome Meals Turkey Recipe Wet Dog Food Tray", price: 1.49 },
-  //     { name: "Cesar Wholesome Meals Porterhouse Steak Flavor Wet Dog Food Tray", price: 1.49 },
-  //     { name: "Cesar Wholesome Meals Filet Mignon Flavor Wet Dog Food Tray", price: 1.49 },
-  //     { name: "Cesar Classic Loaf in Sauce Grilled Chicken Flavor Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Classic Loaf in Sauce Filet Mignon Flavor Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Classic Loaf in Sauce Porterhouse Steak Flavor Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Classic Loaf in Sauce Beef Recipe Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Home Delights Grilled Chicken & Liver Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Home Delights Beef Stew Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Home Delights Turkey & Potatoes Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Home Delights Chicken & Vegetables Wet Dog Food 3.5 oz (12 Count Multipack)", price: 13.94 },
-  //     { name: "Cesar Filets in Gravy Chicken Flavor Wet Dog Food 3.5 oz (12 Count Multipack)", price: 14.98 },
-  //     { name: "Cesar Filets in Gravy Beef Flavor Wet Dog Food 3.5 oz (12 Count Multipack)", price: 14.98 },
-  //     { name: "Cesar Filets in Gravy Steak Flavor Wet Dog Food 3.5 oz (12 Count Multipack)", price: 14.98 },
-  //     { name: "Cesar Simply Crafted Chicken & Sweet Potato Wet Dog Food 3.5 oz (12 Count Multipack)", price: 17.88 },
-  //     { name: "Cesar Simply Crafted Beef & Potato Wet Dog Food 3.5 oz (12 Count Multipack)", price: 17.88 },
-  //     { name: "Cesar Simply Crafted Chicken, Carrots & Green Beans Wet Dog Food 3.5 oz (12 Count Multipack)", price: 17.88 },
-  //     { name: "Cesar Home Delights Wet Dog Food Variety Pack (24×3.5 oz)", price: 24.94 },
-  //     { name: "Cesar Home Delights Wet Dog Food Variety Pack (12×3.5 oz)", price: 13.94 },
-  //     { name: "Cesar Classic Loaf In Sauce Wet Dog Food Variety Pack (24×3.5 oz)", price: 24.94 },
-  //     { name: "Cesar Filets In Gravy Variety Pack Wet Dog Food (24×3.5 oz)", price: 24.94 },
-  //     { name: "Cesar Classic Loaf In Sauce Wet Dog Food Variety Pack (12×3.5 oz)", price: 13.94 },
-  //     { name: "Cesar Loaf & Topper In Sauce Variety Pack Wet Dog Food (24×3.5 oz)", price: 24.94 },
-  //     { name: "Cesar Wholesome Bowls Broth Wet Dog Food Variety Pack (6×3 oz)", price: 16.96 }
-  //   ]
-  // },
+  {
+    store: "Target",
+    name: "Target",
+    slogan: "Expect More. Pay Less.",
+    phone: "(877) 738-6742",
+    locations: [
+      { address: "860 Broadway, New York, NY 10003", state: "NY" },
+
+    ],
+    products: [
+{ "name": "Seedlip Grove 42 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
+{ "name": "Seedlip Spice 94 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
+
+{ "name": "Knob Creek Kentucky Straight Bourbon Whiskey, 750ml", "price": 42.99 },
+{ "name": "Knob Creek 12 Year Bourbon, 750ml", "price": 67.99 },
+{ "name": "Knob Creek Straight Rye Whiskey, 750ml", "price": 42.99 },
+
+{ "name": "Canadian Club Canadian Whisky, 750ml", "price": 8.99 },
+{ "name": "Canadian Club Canadian Whisky, 1L", "price": 17.99 },
+{ "name": "Canadian Club Canadian Whisky, 1.75L", "price": 19.99 },
+    ]
+  },
 
   //   {
   //     store: "Bacardi Ocho",

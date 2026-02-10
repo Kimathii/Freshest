@@ -26,11 +26,12 @@ const Receipt = () => {
     "McDonald's": "/logos/mcdonalds.png",
     "Walmart": "/logos/walmart.png",
     "Chewy": "/logos/chewy.png",
+    "WholeFoods": "/logos/wholefoods.png",
   };
 
   return (
     <div
-      className={`receipt ${receipt.company === "Petco" ? "petco" : ""} ${receipt.company === "Sam's Club" ? "sams-club" : ""} ${receipt.company === "Target" ? "target" : ""}`}
+      className={`receipt ${receipt.company === "Petco" ? "petco" : ""} ${receipt.company === "Sam's Club" ? "sams-club" : ""} ${receipt.company === "Target" ? "target" : ""} ${receipt.company === "Walmart" ? "walmart" : ""} ${receipt.company === "WholeFoods" ? "wholefoods" : ""}`}
       onDoubleClick={handleGenerateNew}
     >
       <div className="logo-container">

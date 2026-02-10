@@ -61,6 +61,26 @@ body {
   filter: grayscale(100%);
 }
 
+.receipt.walmart .receipt-logo {
+  max-width: 250px;
+  max-height: 90px;
+  min-width: unset;
+}
+
+.receipt.wholefoods .receipt-logo {
+  max-width: 400px;
+  max-height: 120px;
+  min-width: unset;
+}
+
+.receipt.wholefoods .logo-container {
+  margin-bottom: -10px;
+}
+
+.receipt.walmart .logo-container {
+  margin-bottom: -10px;
+}
+
 /* HEADINGS */
 .receipt h1 {
   font-size: 1.5rem;

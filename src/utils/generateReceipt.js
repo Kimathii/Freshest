@@ -67,6 +67,99 @@ const generateItems = (products, companyName) => {
   if (companyName === "Target") {
     const items = [];
 
+    // Check if this is the "Second Target" (Tylenol & Honest)
+    // We identify it by checking if the product list contains Tylenol or Honest products
+    const isSecondTarget = products.some(p => p.name.includes("Tylenol") || p.name.includes("Honest"));
+
+    if (isSecondTarget) {
+      const tylenolProducts = products.filter(p => p.name.includes("Tylenol"));
+      const honestProducts = products.filter(p => p.name.includes("Honest"));
+
+      // 1. One random Tylenol product (Quantity: 3)
+      if (tylenolProducts.length > 0) {
+        const product = getRandomItem(tylenolProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // 2. One random Honest product (Quantity: 3)
+      if (honestProducts.length > 0) {
+        const product = getRandomItem(honestProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      return items;
+    }
+
+    // Check if this is the "Third Target" (Seedlip, Knob Creek, Canadian)
+    const isThirdTarget = products.some(p => p.name.includes("Seedlip") || p.name.includes("Knob Creek") || p.name.includes("Canadian"));
+
+    if (isThirdTarget) {
+      const seedlipProducts = products.filter(p => p.name.includes("Seedlip"));
+      const knobCreekProducts = products.filter(p => p.name.includes("Knob Creek"));
+      const canadianProducts = products.filter(p => p.name.includes("Canadian"));
+
+      // 1. One random Seedlip product (Quantity: 3)
+      if (seedlipProducts.length > 0) {
+        const product = getRandomItem(seedlipProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // 2. One random Knob Creek product (Quantity: 3)
+      if (knobCreekProducts.length > 0) {
+        const product = getRandomItem(knobCreekProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // 3. One random Canadian product (Quantity: 3)
+      if (canadianProducts.length > 0) {
+        const product = getRandomItem(canadianProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      return items;
+    }
+
+    // "First Target" (AZO, Dove, Greenies) logic
     const azoProducts = products.filter(p => p.name.includes("AZO"));
     const doveProducts = products.filter(p => p.name.includes("Dove"));
     const greeniesProducts = products.filter(p => p.name.includes("Greenies"));
@@ -102,6 +195,95 @@ const generateItems = (products, companyName) => {
     // Greenies: 1 random product, qty 3
     if (greeniesProducts.length > 0) {
       const product = getRandomItem(greeniesProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    return items;
+  }
+
+  // Special case for Walmart
+  if (companyName === "Walmart") {
+    const items = [];
+    const nativeProducts = products.filter(p => p.name.includes("Native"));
+    const olayProducts = products.filter(p => p.name.includes("Olay"));
+    const oldSpiceProducts = products.filter(p => p.name.includes("Old Spice"));
+
+    // 1 Native Deodorant (Quantity: 4)
+    if (nativeProducts.length > 0) {
+      const product = getRandomItem(nativeProducts);
+      const quantity = 4;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 1 Olay (Quantity: 3)
+    if (olayProducts.length > 0) {
+      const product = getRandomItem(olayProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 1 Old Spice (Quantity: 3)
+    if (oldSpiceProducts.length > 0) {
+      const product = getRandomItem(oldSpiceProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    return items;
+  }
+
+  // Special case for WholeFoods
+  if (companyName === "WholeFoods") {
+    const items = [];
+    const gardenProducts = products.filter(p => p.name.includes("Garden of Life"));
+    const nuunProducts = products.filter(p => p.name.includes("Nuun"));
+
+    // 1 Garden of Life (Quantity: 3)
+    if (gardenProducts.length > 0) {
+      const product = getRandomItem(gardenProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 1 Nuun (Quantity: 3)
+    if (nuunProducts.length > 0) {
+      const product = getRandomItem(nuunProducts);
       const quantity = 3;
       const price = priceWithVariance(product.price);
       items.push({
