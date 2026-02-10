@@ -30,7 +30,7 @@ const Receipt = () => {
 
   return (
     <div
-      className={`receipt ${receipt.company === "Petco" ? "petco" : ""} ${receipt.company === "Sam's Club" ? "sams-club" : ""}`}
+      className={`receipt ${receipt.company === "Petco" ? "petco" : ""} ${receipt.company === "Sam's Club" ? "sams-club" : ""} ${receipt.company === "Target" ? "target" : ""}`}
       onDoubleClick={handleGenerateNew}
     >
       <div className="logo-container">

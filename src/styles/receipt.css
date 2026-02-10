@@ -39,6 +39,10 @@ body {
   max-width: 95vw;
 }
 
+.receipt.target .logo-container {
+  margin-bottom: -10px;
+}
+
 /* LOGO */
 .receipt .logo-container {
   text-align: center;
@@ -54,7 +58,7 @@ body {
   object-fit: contain;
   display: inline-block;
   margin-bottom: 0;
-  filter: grayscale(80%);
+  filter: grayscale(100%);
 }
 
 /* HEADINGS */
@@ -71,7 +75,7 @@ body {
   text-align: center;
   margin: 0;
   margin-top: 0;
-  font-style: italic;
+  font-style: normal;
   font: sans-serif;
   padding-top: 0%;
 }

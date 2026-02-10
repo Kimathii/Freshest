@@ -1,5 +1,5 @@
 // utils/generateReceipt.js
-import companies from "../data/companies";
+import companies from "../data/companies.js";
 
 // State tax rates
 const STATE_TAX = {
@@ -61,6 +61,59 @@ const generateItems = (products, companyName) => {
         total: price
       };
     });
+  }
+
+  // Special case for Target
+  if (companyName === "Target") {
+    const items = [];
+
+    const azoProducts = products.filter(p => p.name.includes("AZO"));
+    const doveProducts = products.filter(p => p.name.includes("Dove"));
+    const greeniesProducts = products.filter(p => p.name.includes("Greenies"));
+
+    // AZO: 1 random product, qty 3-4
+    if (azoProducts.length > 0) {
+      const product = getRandomItem(azoProducts);
+      const quantity = getRandomInt(3, 4);
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // Dove: 1 random product, qty 5
+    if (doveProducts.length > 0) {
+      const product = getRandomItem(doveProducts);
+      const quantity = 5;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // Greenies: 1 random product, qty 3
+    if (greeniesProducts.length > 0) {
+      const product = getRandomItem(greeniesProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    return items;
   }
 
   // Special case for Petco
