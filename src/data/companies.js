@@ -182,6 +182,12 @@ const companies = [
       { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
     ],
     products: [
+      { "name": "Filtrete MPR Rfeillable Air Filter Starter Kit", "price": 89.99 },
+
+      { "name": "Stella Rosa Spirits Smooth Red", "price": 14.99 },
+      { "name": "Stella Rosa Spirits Smooth Black", "price": 14.99 },
+      { "name": "Stella Rosa Spirits Smooth White", "price": 14.99 },
+
       { "name": "Aperol Aperitivo", "price": 11.07 },
       { "name": "SKYY Vodka", "price": 16.01 },
       { "name": "Wild Turkey Bourbon Whisky", "price": 33.21 },

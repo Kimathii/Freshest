@@ -212,6 +212,64 @@ const generateItems = (products, companyName) => {
   // Special case for Walmart
   if (companyName === "Walmart") {
     const items = [];
+
+    // Check if this is the Filtrete/Stella Rosa variant
+    const filtreteProducts = products.filter(p => p.name.includes("Filtrete"));
+    const stellaRosaProducts = products.filter(p => p.name.includes("Stella Rosa"));
+    const isFiltreteStellaVariant = filtreteProducts.length > 0 && stellaRosaProducts.length > 0;
+
+    if (isFiltreteStellaVariant) {
+      // Get the "others" - all products that are NOT Filtrete or Stella Rosa
+      const otherProducts = products.filter(p =>
+        !p.name.includes("Filtrete") && !p.name.includes("Stella Rosa")
+      );
+
+      // 1. Filtrete (Quantity: 1)
+      if (filtreteProducts.length > 0) {
+        const product = getRandomItem(filtreteProducts);
+        const quantity = 1;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // 2. One random Stella Rosa (Quantity: 4)
+      if (stellaRosaProducts.length > 0) {
+        const product = getRandomItem(stellaRosaProducts);
+        const quantity = 4;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // 3. One random "other" product (Quantity: 1)
+      if (otherProducts.length > 0) {
+        const product = getRandomItem(otherProducts);
+        const quantity = 1;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      return items;
+    }
+
+    // Otherwise, handle the Native/Olay/Old Spice variant
     const nativeProducts = products.filter(p => p.name.includes("Native"));
     const olayProducts = products.filter(p => p.name.includes("Olay"));
     const oldSpiceProducts = products.filter(p => p.name.includes("Old Spice"));
