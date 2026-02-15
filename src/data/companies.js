@@ -157,22 +157,18 @@ const companies = [
       { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
     ],
     products: [
-      { "name": "Native Deodorant Stick Coconut & Vanilla (aluminum-free)", "price": 12.99 },
+      { "name": "Native Deodorant Stick Coconut & Vanilla ", "price": 12.99 },
       { "name": "Native Sensitive Deodorant Sea Salt & Cedar (baking-soda-free)", "price": 12.99 },
-      { "name": "Native Plastic-Free Deodorant", "price": 14.99 },
-      { "name": "Native Deodorant Black Oak & Amber", "price": 12.99 },
-      { "name": "Native Body Spray", "price": 10.99 },
+      { "name": "Native Sensitive (aluminum-free)", "price": 14.99 },
 
-      { "name": "Olay Regenerist (anti-aging moisturizer)", "price": 24.99 },
-      { "name": "Olay Total Effects (7-in-1 daily moisturizer)", "price": 16.99 },
-      { "name": "Olay Retinol24 (night treatment)", "price": 28.99 },
-      { "name": "Olay Vitamin C + Peptide24 (brightening)", "price": 29.99 },
-      { "name": "Olay Complete (daily moisturizer)", "price": 11.99 },
+      { "name": "Olay Regenerist (Retinol 24) Night cream fragrance free", "price": 24.99 },
+      { "name": "Olay Regenerist micro-Sculpting cream", "price": 16.99 },
+      { "name": "Olay Super Serum", "price": 24.99 },
 
-      { "name": "Old Spice High Endurance Deodorant", "price": 5.99 },
-      { "name": "Old Spice Red Collection Deodorant", "price": 6.99 },
-      { "name": "Old Spice Wild Collection Body Wash", "price": 6.99 },
-      { "name": "Old Spice Total Body Deodorant", "price": 12.99 }
+      { "name": "Old Spice Gentle Man's Exfoliating Body Wash", "price": 5.99 },
+      { "name": "Old Spice Swagger Made By Cedarwood Antiperspirant", "price": 6.99 },
+      { "name": "Old Spice Fiji", "price": 6.99 },
+      { "name": "Old Spice Gentle Man's Super Hydration Moisturizing Body Wash", "price": 12.99 }
 
     ]
   },
