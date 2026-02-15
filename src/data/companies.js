@@ -27,22 +27,11 @@ const companies = [
       { "name": "AZO UTI Test Strips, 3 Test Strips", "price": 11.97 },
 
       // 
-
-      { "name": "Dove Deep Moisture Body Wash 680ml", "price": 148.50 },
-      { "name": "Dove Deep AntiPerspirant Stick", "price": 145.50 },
-      { "name": "Dove Sensitive Skin Body Wash (Hypoallergenic)", "price": 340.00 },
-      { "name": "Dove Reviving Body Wash 500ml", "price": 72.00 },
-      { "name": "Dove Sensitive Dry Spray 50ml", "price": 74.99 },
       { "name": "Dove Whole Body Deodorant 120ml", "price": 76.00 },
-      { "name": "Dove Purely Pampering Body Wash 750ml", "price": 185.00 },
-      { "name": "Dove Nourishing Silk Body Wash 500ml", "price": 126.50 },
 
       // 
 
-      { "name": "Greenies Feline Catnip Flavor Dental Treats 2.5 oz", "price": 10.70 },
-      { "name": "Greenies Feline Catnip Flavor Dental Treats 6.75oz", "price": 10.99 },
       { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 6.49 },
-      { "name": "Greenies Feline Catnip Flavor Dental Treats 60g 7.75oz", "price": 11.99 },
     ]
   },
 
@@ -63,8 +52,10 @@ const companies = [
       { address: "1131 N Beale Rd, Marysville, CA 95901", state: "CA", zip: "95901" }
     ],
     products: [
-      { "name": "Tylenol Proactive Support* Muscle & Joint Supplements 30 Count", "price": 19.99 },
-      { "name": "Tylenol Proactive Support* Muscle & Joint + Stress Supplements 30 Count", "price": 19.99 },
+      { "name": "Tylenol® Proactive Support® Muscle & Joint Supplements 30 Count", "price": 19.99 },
+      { "name": "Tylenol® Proactive Support® Muscle & Joint + Stress Supplements 30 Count", "price": 19.99 },
+      { "name": "Tylenol® PRECISE® Cream", "price": 19.99 },
+      { "name": "Tylenol® PRECISE® Patch", "price": 19.99 },
       // 
       { "name": "Honest Company Flushable Wipes, 126 Count (Plant‑Based, Fragrance‑Free)", "price": 10.97 },
       { "name": "Honest Company Flushable Wipes, 126 Count (Tropical Leaves)", "price": 10.99 },
@@ -157,58 +148,50 @@ const companies = [
       { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
     ],
     products: [
-      { "name": "Native Deodorant Stick Coconut & Vanilla ", "price": 12.99 },
-      { "name": "Native Sensitive Deodorant Sea Salt & Cedar (baking-soda-free)", "price": 12.99 },
-      { "name": "Native Sensitive (aluminum-free)", "price": 14.99 },
+      { "name": "Native Deodorant Stick Coconut & Vanilla ", "price": 32.99 },
+      { "name": "Native Sensitive Deodorant Sea Salt & Cedar (baking-soda-free)", "price": 32.99 },
+      { "name": "Native Sensitive (aluminum-free)", "price": 32.99 },
 
-      { "name": "Olay Regenerist (Retinol 24) Night cream fragrance free", "price": 24.99 },
-      { "name": "Olay Regenerist micro-Sculpting cream", "price": 16.99 },
-      { "name": "Olay Super Serum", "price": 24.99 },
+      { "name": "Olay Regenerist (Retinol 24) Night cream fragrance free", "price": 33.99 },
+      { "name": "Olay Regenerist micro-Sculpting cream", "price": 33.99 },
+      { "name": "Olay Super Serum", "price": 33.99 },
 
-      { "name": "Old Spice Gentle Man's Exfoliating Body Wash", "price": 5.99 },
-      { "name": "Old Spice Swagger Made By Cedarwood Antiperspirant", "price": 6.99 },
-      { "name": "Old Spice Fiji", "price": 6.99 },
-      { "name": "Old Spice Gentle Man's Super Hydration Moisturizing Body Wash", "price": 12.99 }
+      { "name": "Old Spice Gentle Man's Exfoliating Body Wash", "price": 15.99 },
+      { "name": "Old Spice Swagger Made By Cedarwood Antiperspirant", "price": 15.99 },
+      { "name": "Old Spice Fiji", "price": 15.99 },
+      { "name": "Old Spice Gentle Man's Super Hydration Moisturizing Body Wash", "price": 15.99 }
 
     ]
   },
 
-  //     {
-  //     store: "Eukanuba Pet Food",
-  //     name: "Tractor Supply Co",
-  //     slogan: "For Life Out Here",
-  //     phone: "(502) 874-8000",
-  //     locations: [
-  //      { address: "4600 Shelbyville Rd, Louisville, KY 40207", state: "KY" },
-  // { address: "191 Outer Loop, Louisville, KY 40214", state: "KY" },
-  // { address: "5000 Shelbyville Rd, Louisville, KY 40207", state: "KY" },
-  // { address: "1960 W Broadway, Louisville, KY 40203", state: "KY" },
-  //       { address: "150 E 42nd St, New York, NY 10017", state: "NY" },
-  //       { address: "250 Summer St, Boston, MA 02210", state: "MA" },
-  //       { address: "600 N Michigan Ave, Chicago, IL 60611", state: "IL" },
-  // { address: "3411 Bardstown Rd, Louisville, KY 40218", state: "KY" },
-  // { address: "12900 Shelbyville Rd, Louisville, KY 40243", state: "KY" },
-  // { address: "4101 Towne Center Dr, Louisville, KY 40241", state: "KY" },
-  // { address: "12301 Shelbyville Rd, Louisville, KY 40243", state: "KY" }
-  //     ],
-  //     products: [
-  //     { name: "Royal Canin Size Health Nutrition Mini Adult Dry Dog Food (8.8 lb)", price: 52.99 },
-  // { name: "Royal Canin Size Health Nutrition Medium Adult Dry Dog Food (15 lb)", price: 74.99 },
-  // { name: "Royal Canin Size Health Nutrition Maxi Adult Dry Dog Food (30 lb)", price: 119.99 },
-  // { name: "Royal Canin Breed Health Nutrition German Shepherd Adult Dry Dog Food (30 lb)", price: 134.99 },
-  // { name: "Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food (30 lb)", price: 129.99 },
-  // { name: "Royal Canin Breed Health Nutrition French Bulldog Adult Dry Dog Food (12 lb)", price: 89.99 },
-  // { name: "Royal Canin Breed Health Nutrition Chihuahua Adult Dry Dog Food (6 lb)", price: 49.99 },
-  // { name: "Royal Canin Veterinary Diet Gastrointestinal Low Fat Dry Dog Food (24 lb)", price: 101.99 },
-  // { name: "Royal Canin Veterinary Diet Hydrolyzed Protein Adult HP Dry Dog Food (24 lb)", price: 107.99 },
-  // { name: "Royal Canin Veterinary Diet Renal Support Dry Dog Food (24 lb)", price: 104.99 },
-  // { name: "Royal Canin Calm Adult Dry Dog Food (24 lb)", price: 99.99 },
-  // { name: "Royal Canin Adult Sensitive Stomach Dry Dog Food (24 lb)", price: 97.99 },
-  // { name: "Royal Canin Puppy Large Breed Dry Dog Food (30 lb)", price: 103.99 },
-  // { name: "Royal Canin Puppy Medium Breed Dry Dog Food (22 lb)", price: 92.99 },
-  // { name: "Royal Canin Puppy Small Breed Dry Dog Food (8.8 lb)", price: 54.99 },
-  //     ]
-  //   },
+  {
+    store: "Walmart",
+    name: "Walmart",
+    slogan: "",
+    phone: "(800) 672-4399",
+    locations: [
+      { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
+      { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
+      { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
+      { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
+      { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
+      { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
+      { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
+      { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
+      { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
+      { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
+    ],
+    products: [
+      { "name": "Aperol Aperitivo", "price": 11.07 },
+      { "name": "SKYY Vodka", "price": 16.01 },
+      { "name": "Wild Turkey Bourbon Whisky", "price": 33.21 },
+      { "name": "Campari Bitter", "price": 13.65 },
+      { "name": "Courvoisier VSOP Cognac", "price": 88.56 },
+      { "name": "Espolon Tequila Blanco", "price": 25.83 },
+      { "name": "Grand Marnier Cordon Rouge", "price": 33.21 },
+    ]
+  },
+
   {
     store: "WholeFoods",
     name: "WholeFoods",
@@ -216,15 +199,15 @@ const companies = [
     phone: "(203) 877-4281",
     locations: [
       { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
-{ address: "450 W 33rd St, New York, NY 10001", state: "NY" },
-{ address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
-{ address: "66 Broadway, New York, NY 10005", state: "NY" },
-{ address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
-{ address: "1095 6th Ave, New York, NY 10036", state: "NY" },
-{ address: "250 7th Ave, New York, NY 10001", state: "NY" },
-{ address: "301 W 50th St, New York, NY 10019", state: "NY" },
-{ address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
-{ address: "226 E 57th St, New York, NY 10022", state: "NY" }
+      { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
+      { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
+      { address: "66 Broadway, New York, NY 10005", state: "NY" },
+      { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
+      { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
+      { address: "250 7th Ave, New York, NY 10001", state: "NY" },
+      { address: "301 W 50th St, New York, NY 10019", state: "NY" },
+      { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
+      { address: "226 E 57th St, New York, NY 10022", state: "NY" }
 
     ],
     products: [
@@ -233,7 +216,7 @@ const companies = [
       { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
       { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
       { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
-// 
+      // 
       { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
       { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
       { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
@@ -273,16 +256,16 @@ const companies = [
 
     ],
     products: [
-{ "name": "Seedlip Grove 42 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
-{ "name": "Seedlip Spice 94 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
+      { "name": "Seedlip Grove 42 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
+      { "name": "Seedlip Spice 94 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
 
-{ "name": "Knob Creek Kentucky Straight Bourbon Whiskey, 750ml", "price": 42.99 },
-{ "name": "Knob Creek 12 Year Bourbon, 750ml", "price": 67.99 },
-{ "name": "Knob Creek Straight Rye Whiskey, 750ml", "price": 42.99 },
+      { "name": "Knob Creek Kentucky Straight Bourbon Whiskey, 750ml", "price": 42.99 },
+      { "name": "Knob Creek 12 Year Bourbon, 750ml", "price": 67.99 },
+      { "name": "Knob Creek Straight Rye Whiskey, 750ml", "price": 42.99 },
 
-{ "name": "Canadian Club Canadian Whisky, 750ml", "price": 8.99 },
-{ "name": "Canadian Club Canadian Whisky, 1L", "price": 17.99 },
-{ "name": "Canadian Club Canadian Whisky, 1.75L", "price": 19.99 },
+      { "name": "Canadian Club Canadian Whisky, 750ml", "price": 8.99 },
+      { "name": "Canadian Club Canadian Whisky, 1L", "price": 17.99 },
+      { "name": "Canadian Club Canadian Whisky, 1.75L", "price": 19.99 },
     ]
   },
 
