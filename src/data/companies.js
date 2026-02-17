@@ -31,7 +31,7 @@ const companies = [
 
       // 
 
-      { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 6.49 },
+      { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 16.49 },
     ]
   },
 
