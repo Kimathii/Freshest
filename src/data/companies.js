@@ -2,67 +2,67 @@
 // Only 3 brands: Eukanuba Pet Food, Pure Encapsulations, Bacardi Ocho
 
 const companies = [
-  {
-    store: "Target",
-    name: "Target",
-    slogan: "EXPECT MORE, PAY LESS",
-    phone: "(615) 253-0000",
-    locations: [
-      { "address": "4331 Bardstown Rd, Louisville, KY 40218", "state": "KY" },
-      { "address": "1151 S College Ave, Fort Collins, CO 80524", "state": "CO" },
-      { "address": "100 S Wabash Ave, Chicago, IL 60603", "state": "IL" },
-      { "address": "555 S Main St, Salt Lake City, UT 84111", "state": "UT" },
-      { "address": "8001 Maryland Ave, St. Louis, MO 63105", "state": "MO" }
-    ],
-    products: [
-      { "name": "AZO D‑Mannose Urinary Tract Health Ready‑to‑Mix Supplement, Raspberry Lemonade, 10 Packets", "price": 19.77 },
-      { "name": "AZO Urinary Pain Relief Maximum Strength Tablets, 24 Count", "price": 8.53 },
-      { "name": "AZO Urinary Tract Defense Tablets, 24 Count", "price": 8.37 },
-      { "name": "AZO Yeast Plus Dual Relief Tablets, 60 Count", "price": 8.12 },
-      { "name": "AZO D‑Mannose Urinary Tract Health Supplement, 120 Count", "price": 29.29 },
-      { "name": "AZO Cranberry Urinary Tract Health Supplement, 50 Count", "price": 8.24 },
-      { "name": "AZO Dual Protection Urinary & Vaginal Support Supplement, 30 Count", "price": 32.88 },
-      { "name": "AZO Cranberry Urinary Tract Health Gummies Supplement, 72 Count", "price": 12.49 },
-      { "name": "AZO Cranberry Urinary Tract Health Supplement, 120 Count", "price": 14.48 },
-      { "name": "AZO UTI Test Strips, 3 Test Strips", "price": 11.97 },
+  // {
+  //   store: "Target",
+  //   name: "Target",
+  //   slogan: "EXPECT MORE, PAY LESS",
+  //   phone: "(615) 253-0000",
+  //   locations: [
+  //     { "address": "4331 Bardstown Rd, Louisville, KY 40218", "state": "KY" },
+  //     { "address": "1151 S College Ave, Fort Collins, CO 80524", "state": "CO" },
+  //     { "address": "100 S Wabash Ave, Chicago, IL 60603", "state": "IL" },
+  //     { "address": "555 S Main St, Salt Lake City, UT 84111", "state": "UT" },
+  //     { "address": "8001 Maryland Ave, St. Louis, MO 63105", "state": "MO" }
+  //   ],
+  //   products: [
+  //     { "name": "AZO D‑Mannose Urinary Tract Health Ready‑to‑Mix Supplement, Raspberry Lemonade, 10 Packets", "price": 19.77 },
+  //     { "name": "AZO Urinary Pain Relief Maximum Strength Tablets, 24 Count", "price": 8.53 },
+  //     { "name": "AZO Urinary Tract Defense Tablets, 24 Count", "price": 8.37 },
+  //     { "name": "AZO Yeast Plus Dual Relief Tablets, 60 Count", "price": 8.12 },
+  //     { "name": "AZO D‑Mannose Urinary Tract Health Supplement, 120 Count", "price": 29.29 },
+  //     { "name": "AZO Cranberry Urinary Tract Health Supplement, 50 Count", "price": 8.24 },
+  //     { "name": "AZO Dual Protection Urinary & Vaginal Support Supplement, 30 Count", "price": 32.88 },
+  //     { "name": "AZO Cranberry Urinary Tract Health Gummies Supplement, 72 Count", "price": 12.49 },
+  //     { "name": "AZO Cranberry Urinary Tract Health Supplement, 120 Count", "price": 14.48 },
+  //     { "name": "AZO UTI Test Strips, 3 Test Strips", "price": 11.97 },
 
-      // 
-      { "name": "Dove Whole Body Deodorant 120ml", "price": 76.00 },
+  //     // 
+  //     { "name": "Dove Whole Body Deodorant 120ml", "price": 76.00 },
 
-      // 
+  //     // 
 
-      { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 16.49 },
-    ]
-  },
+  //     { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 16.49 },
+  //   ]
+  // },
 
 
-  {
-    store: "Target",
-    name: "Target",
-    slogan: "EXPECT MORE, PAY LESS",
-    phone: "(800) 925-6278",
-    locations: [
-      { address: "111 Yale St, Houston, TX 77007", state: "TX", zip: "77007" },
-      { address: "2391 S Wayside Dr, Houston, TX 77023", state: "TX", zip: "77023" },
-      { address: "1980 Freedom Pkwy, Washington, IL 61571", state: "IL", zip: "61571" },
-      { address: "4252 Highway 54, Osage Beach, MO 65065", state: "MO", zip: "65065" },
-      { address: "100 N Main St, Manville, NJ 08835", state: "NJ", zip: "08835" },
-      { address: "2827 S Buckner Blvd, Dallas, TX 75227", state: "TX", zip: "75227" },
-      { address: "6001 Mahoning Ave, Austintown, OH 44515", state: "OH", zip: "44515" },
-      { address: "1131 N Beale Rd, Marysville, CA 95901", state: "CA", zip: "95901" }
-    ],
-    products: [
-      { "name": "Tylenol® Proactive Support® Muscle & Joint Supplements 30 Count", "price": 19.99 },
-      { "name": "Tylenol® Proactive Support® Muscle & Joint + Stress Supplements 30 Count", "price": 19.99 },
-      { "name": "Tylenol® PRECISE® Cream", "price": 19.99 },
-      { "name": "Tylenol® PRECISE® Patch", "price": 19.99 },
-      // 
-      { "name": "Honest Company Flushable Wipes, 126 Count (Plant‑Based, Fragrance‑Free)", "price": 10.97 },
-      { "name": "Honest Company Flushable Wipes, 126 Count (Tropical Leaves)", "price": 10.99 },
-      { "name": "Honest Company Flushable Wipes, 42 Count (Plant‑Based, Fragrance‑Free)", "price": 6.00 },
-      { "name": "Honest Company Flushable Wipes, 84 Count (2×42 Pack)", "price": 14.00 }
-    ]
-  },
+  // {
+  //   store: "Target",
+  //   name: "Target",
+  //   slogan: "EXPECT MORE, PAY LESS",
+  //   phone: "(800) 925-6278",
+  //   locations: [
+  //     { address: "111 Yale St, Houston, TX 77007", state: "TX", zip: "77007" },
+  //     { address: "2391 S Wayside Dr, Houston, TX 77023", state: "TX", zip: "77023" },
+  //     { address: "1980 Freedom Pkwy, Washington, IL 61571", state: "IL", zip: "61571" },
+  //     { address: "4252 Highway 54, Osage Beach, MO 65065", state: "MO", zip: "65065" },
+  //     { address: "100 N Main St, Manville, NJ 08835", state: "NJ", zip: "08835" },
+  //     { address: "2827 S Buckner Blvd, Dallas, TX 75227", state: "TX", zip: "75227" },
+  //     { address: "6001 Mahoning Ave, Austintown, OH 44515", state: "OH", zip: "44515" },
+  //     { address: "1131 N Beale Rd, Marysville, CA 95901", state: "CA", zip: "95901" }
+  //   ],
+  //   products: [
+  //     { "name": "Tylenol® Proactive Support® Muscle & Joint Supplements 30 Count", "price": 19.99 },
+  //     { "name": "Tylenol® Proactive Support® Muscle & Joint + Stress Supplements 30 Count", "price": 19.99 },
+  //     { "name": "Tylenol® PRECISE® Cream", "price": 19.99 },
+  //     { "name": "Tylenol® PRECISE® Patch", "price": 19.99 },
+  //     // 
+  //     { "name": "Honest Company Flushable Wipes, 126 Count (Plant‑Based, Fragrance‑Free)", "price": 10.97 },
+  //     { "name": "Honest Company Flushable Wipes, 126 Count (Tropical Leaves)", "price": 10.99 },
+  //     { "name": "Honest Company Flushable Wipes, 42 Count (Plant‑Based, Fragrance‑Free)", "price": 6.00 },
+  //     { "name": "Honest Company Flushable Wipes, 84 Count (2×42 Pack)", "price": 14.00 }
+  //   ]
+  // },
   // { name: "Royal Canin Size Health Nutrition Mini Adult Dry Dog Food (8.8 lb)", price: 52.99 },
   // { name: "Royal Canin Size Health Nutrition Medium Adult Dry Dog Food (15 lb)", price: 74.99 },
   // { name: "Royal Canin Size Health Nutrition Maxi Adult Dry Dog Food (30 lb)", price: 119.99 },
@@ -159,77 +159,78 @@ const companies = [
       { "name": "Old Spice Gentle Man's Exfoliating Body Wash", "price": 15.99 },
       { "name": "Old Spice Swagger Made By Cedarwood Antiperspirant", "price": 15.99 },
       { "name": "Old Spice Fiji", "price": 15.99 },
-      { "name": "Old Spice Gentle Man's Super Hydration Moisturizing Body Wash", "price": 15.99 }
+      { "name": "Old Spice Gentle Man's Super Hydration Moisturizing Body Wash", "price": 15.99 },
 
+       { "name": "Stella Rosa Spirits Smooth White", "price": 14.99 }
     ]
   },
 
-  {
-    store: "Walmart",
-    name: "Walmart",
-    slogan: "",
-    phone: "(800) 672-4399",
-    locations: [
-      { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
-      { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
-      { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
-      { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
-      { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
-      { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
-      { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
-      { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
-      { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
-      { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
-    ],
-    products: [
-      { "name": "Filtrete MPR Rfeillable Air Filter Starter Kit", "price": 89.99 },
+  // {
+  //   store: "Walmart",
+  //   name: "Walmart",
+  //   slogan: "",
+  //   phone: "(800) 672-4399",
+  //   locations: [
+  //     { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
+  //     { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
+  //     { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
+  //     { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
+  //     { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
+  //     { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
+  //     { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
+  //     { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
+  //     { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
+  //     { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
+  //   ],
+  //   products: [
+  //     { "name": "Filtrete MPR Rfeillable Air Filter Starter Kit", "price": 89.99 },
 
-      { "name": "Stella Rosa Spirits Smooth Red", "price": 14.99 },
-      { "name": "Stella Rosa Spirits Smooth Black", "price": 14.99 },
-      { "name": "Stella Rosa Spirits Smooth White", "price": 14.99 },
+  //     { "name": "Stella Rosa Spirits Smooth Red", "price": 14.99 },
+  //     { "name": "Stella Rosa Spirits Smooth Black", "price": 14.99 },
+  //     { "name": "Stella Rosa Spirits Smooth White", "price": 14.99 },
 
-      { "name": "Aperol Aperitivo", "price": 11.07 },
-      { "name": "SKYY Vodka", "price": 16.01 },
-      { "name": "Wild Turkey Bourbon Whisky", "price": 33.21 },
-      { "name": "Campari Bitter", "price": 13.65 },
-      { "name": "Courvoisier VSOP Cognac", "price": 88.56 },
-      { "name": "Espolon Tequila Blanco", "price": 25.83 },
-      { "name": "Grand Marnier Cordon Rouge", "price": 33.21 },
-    ]
-  },
+  //     { "name": "Aperol Aperitivo", "price": 11.07 },
+  //     { "name": "SKYY Vodka", "price": 16.01 },
+  //     { "name": "Wild Turkey Bourbon Whisky", "price": 33.21 },
+  //     { "name": "Campari Bitter", "price": 13.65 },
+  //     { "name": "Courvoisier VSOP Cognac", "price": 88.56 },
+  //     { "name": "Espolon Tequila Blanco", "price": 25.83 },
+  //     { "name": "Grand Marnier Cordon Rouge", "price": 33.21 },
+  //   ]
+  // },
 
-  {
-    store: "WholeFoods",
-    name: "WholeFoods",
-    slogan: "",
-    phone: "(203) 877-4281",
-    locations: [
-      { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
-      { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
-      { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
-      { address: "66 Broadway, New York, NY 10005", state: "NY" },
-      { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
-      { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
-      { address: "250 7th Ave, New York, NY 10001", state: "NY" },
-      { address: "301 W 50th St, New York, NY 10019", state: "NY" },
-      { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
-      { address: "226 E 57th St, New York, NY 10022", state: "NY" }
+  // {
+  //   store: "WholeFoods",
+  //   name: "WholeFoods",
+  //   slogan: "",
+  //   phone: "(203) 877-4281",
+  //   locations: [
+  //     { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
+  //     { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
+  //     { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
+  //     { address: "66 Broadway, New York, NY 10005", state: "NY" },
+  //     { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
+  //     { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
+  //     { address: "250 7th Ave, New York, NY 10001", state: "NY" },
+  //     { address: "301 W 50th St, New York, NY 10019", state: "NY" },
+  //     { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
+  //     { address: "226 E 57th St, New York, NY 10022", state: "NY" }
 
-    ],
-    products: [
-      { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
-      { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
-      { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
-      { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
-      { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
-      // 
-      { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
-      { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
-      { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
-      { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
-      { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
-    ]
-  },
+  //   ],
+  //   products: [
+  //     { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
+  //     { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
+  //     { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
+  //     { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
+  //     { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
+  //     // 
+  //     { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
+  //     { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
+  //     { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
+  //     { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
+  //     { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
+  //   ]
+  // },
 
 
   // {
@@ -252,28 +253,28 @@ const companies = [
   //   ]
   // },
 
-  {
-    store: "Target",
-    name: "Target",
-    slogan: "Expect More. Pay Less.",
-    phone: "(877) 738-6742",
-    locations: [
-      { address: "860 Broadway, New York, NY 10003", state: "NY" },
+  // {
+  //   store: "Target",
+  //   name: "Target",
+  //   slogan: "Expect More. Pay Less.",
+  //   phone: "(877) 738-6742",
+  //   locations: [
+  //     { address: "860 Broadway, New York, NY 10003", state: "NY" },
 
-    ],
-    products: [
-      { "name": "Seedlip Grove 42 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
-      { "name": "Seedlip Spice 94 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
+  //   ],
+  //   products: [
+  //     { "name": "Seedlip Grove 42 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
+  //     { "name": "Seedlip Spice 94 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
 
-      { "name": "Knob Creek Kentucky Straight Bourbon Whiskey, 750ml", "price": 42.99 },
-      { "name": "Knob Creek 12 Year Bourbon, 750ml", "price": 67.99 },
-      { "name": "Knob Creek Straight Rye Whiskey, 750ml", "price": 42.99 },
+  //     { "name": "Knob Creek Kentucky Straight Bourbon Whiskey, 750ml", "price": 42.99 },
+  //     { "name": "Knob Creek 12 Year Bourbon, 750ml", "price": 67.99 },
+  //     { "name": "Knob Creek Straight Rye Whiskey, 750ml", "price": 42.99 },
 
-      { "name": "Canadian Club Canadian Whisky, 750ml", "price": 8.99 },
-      { "name": "Canadian Club Canadian Whisky, 1L", "price": 17.99 },
-      { "name": "Canadian Club Canadian Whisky, 1.75L", "price": 19.99 },
-    ]
-  },
+  //     { "name": "Canadian Club Canadian Whisky, 750ml", "price": 8.99 },
+  //     { "name": "Canadian Club Canadian Whisky, 1L", "price": 17.99 },
+  //     { "name": "Canadian Club Canadian Whisky, 1.75L", "price": 19.99 },
+  //   ]
+  // },
 
   //   {
   //     store: "Bacardi Ocho",

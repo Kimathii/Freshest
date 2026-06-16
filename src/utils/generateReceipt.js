@@ -213,82 +213,13 @@ const generateItems = (products, companyName) => {
   if (companyName === "Walmart") {
     const items = [];
 
-    // Check if this is the Filtrete/Stella Rosa variant
-    const filtreteProducts = products.filter(p => p.name.includes("Filtrete"));
-    const stellaRosaProducts = products.filter(p => p.name.includes("Stella Rosa"));
-    const isFiltreteStellaVariant = filtreteProducts.length > 0 && stellaRosaProducts.length > 0;
-
-    if (isFiltreteStellaVariant) {
-      // Get the "others" - all products that are NOT Filtrete or Stella Rosa
-      const otherProducts = products.filter(p =>
-        !p.name.includes("Filtrete") && !p.name.includes("Stella Rosa")
-      );
-
-      // 1. Filtrete (Quantity: 1)
-      if (filtreteProducts.length > 0) {
-        const product = getRandomItem(filtreteProducts);
-        const quantity = 1;
-        const price = priceWithVariance(product.price);
-        items.push({
-          itemNumber: getRandomInt(10000000, 99999999),
-          name: product.name,
-          quantity,
-          price,
-          total: +(price * quantity).toFixed(2)
-        });
-      }
-
-      // 2. One random Stella Rosa (Quantity: 4)
-      if (stellaRosaProducts.length > 0) {
-        const product = getRandomItem(stellaRosaProducts);
-        const quantity = 4;
-        const price = priceWithVariance(product.price);
-        items.push({
-          itemNumber: getRandomInt(10000000, 99999999),
-          name: product.name,
-          quantity,
-          price,
-          total: +(price * quantity).toFixed(2)
-        });
-      }
-
-      // 3. One random "other" product (Quantity: 1)
-      if (otherProducts.length > 0) {
-        const product = getRandomItem(otherProducts);
-        const quantity = 1;
-        const price = priceWithVariance(product.price);
-        items.push({
-          itemNumber: getRandomInt(10000000, 99999999),
-          name: product.name,
-          quantity,
-          price,
-          total: +(price * quantity).toFixed(2)
-        });
-      }
-
-      return items;
-    }
-
-    // Otherwise, handle the Native/Olay/Old Spice variant
-    const nativeProducts = products.filter(p => p.name.includes("Native"));
+    // Filter products by brand category
     const olayProducts = products.filter(p => p.name.includes("Olay"));
+    const nativeProducts = products.filter(p => p.name.includes("Native"));
     const oldSpiceProducts = products.filter(p => p.name.includes("Old Spice"));
+    const stellaRosaProducts = products.filter(p => p.name.includes("Stella Rosa"));
 
-    // 1 Native Deodorant (Quantity: 4)
-    if (nativeProducts.length > 0) {
-      const product = getRandomItem(nativeProducts);
-      const quantity = 4;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // 1 Olay (Quantity: 3)
+    // 1. Olay is a constant line item with quantity 3
     if (olayProducts.length > 0) {
       const product = getRandomItem(olayProducts);
       const quantity = 3;
@@ -302,10 +233,31 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // 1 Old Spice (Quantity: 3)
+    // Determine target total line items (random between 2 and 4)
+    // Since Olay is always 1, we need to pick targetCount - 1 other categories
+    const targetCount = getRandomInt(2, 4);
+    const neededOthersCount = targetCount - 1;
+
+    // Define the other categories with their candidate lists
+    const otherCategories = [];
+    if (nativeProducts.length > 0) {
+      otherCategories.push({ name: "Native", list: nativeProducts });
+    }
     if (oldSpiceProducts.length > 0) {
-      const product = getRandomItem(oldSpiceProducts);
-      const quantity = 3;
+      otherCategories.push({ name: "Old Spice", list: oldSpiceProducts });
+    }
+    if (stellaRosaProducts.length > 0) {
+      otherCategories.push({ name: "Stella Rosa", list: stellaRosaProducts });
+    }
+
+    // Shuffle the available other categories to pick a random subset
+    const shuffledOthers = [...otherCategories].sort(() => Math.random() - 0.5);
+    const selectedOthers = shuffledOthers.slice(0, Math.min(neededOthersCount, shuffledOthers.length));
+
+    // For each selected category, pick a random product and assign a random quantity (1 to 5)
+    for (const cat of selectedOthers) {
+      const product = getRandomItem(cat.list);
+      const quantity = getRandomInt(1, 5);
       const price = priceWithVariance(product.price);
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),
