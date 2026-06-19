@@ -219,10 +219,10 @@ const generateItems = (products, companyName) => {
     const oldSpiceProducts = products.filter(p => p.name.includes("Old Spice"));
     const stellaRosaProducts = products.filter(p => p.name.includes("Stella Rosa"));
 
-    // 1. Olay is a constant line item with quantity 3
+    // 1. Olay is a constant line item with quantity randomized between 1 and 3
     if (olayProducts.length > 0) {
       const product = getRandomItem(olayProducts);
-      const quantity = 3;
+      const quantity = getRandomInt(1, 3);
       const price = priceWithVariance(product.price);
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),

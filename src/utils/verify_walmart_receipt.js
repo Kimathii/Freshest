@@ -23,13 +23,13 @@ for (let i = 0; i < totalRuns; i++) {
     isSuccess = false;
   }
 
-  // 3. Olay product must be present and quantity must be 3
+  // 3. Olay product must be present and quantity must be between 1 and 3
   const olayItem = items.find(item => item.name.includes("Olay"));
   if (!olayItem) {
     console.error("FAILURE: Olay product is missing from receipt.");
     isSuccess = false;
-  } else if (olayItem.quantity !== 3) {
-    console.error(`FAILURE: Olay quantity is ${olayItem.quantity}, expected 3.`);
+  } else if (olayItem.quantity < 1 || olayItem.quantity > 3) {
+    console.error(`FAILURE: Olay quantity is ${olayItem.quantity}, expected between 1 and 3.`);
     isSuccess = false;
   }
 
