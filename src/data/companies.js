@@ -2,38 +2,38 @@
 // Only 3 brands: Eukanuba Pet Food, Pure Encapsulations, Bacardi Ocho
 
 const companies = [
-  // {
-  //   store: "Target",
-  //   name: "Target",
-  //   slogan: "EXPECT MORE, PAY LESS",
-  //   phone: "(615) 253-0000",
-  //   locations: [
-  //     { "address": "4331 Bardstown Rd, Louisville, KY 40218", "state": "KY" },
-  //     { "address": "1151 S College Ave, Fort Collins, CO 80524", "state": "CO" },
-  //     { "address": "100 S Wabash Ave, Chicago, IL 60603", "state": "IL" },
-  //     { "address": "555 S Main St, Salt Lake City, UT 84111", "state": "UT" },
-  //     { "address": "8001 Maryland Ave, St. Louis, MO 63105", "state": "MO" }
-  //   ],
-  //   products: [
-  //     { "name": "AZO D‑Mannose Urinary Tract Health Ready‑to‑Mix Supplement, Raspberry Lemonade, 10 Packets", "price": 19.77 },
-  //     { "name": "AZO Urinary Pain Relief Maximum Strength Tablets, 24 Count", "price": 8.53 },
-  //     { "name": "AZO Urinary Tract Defense Tablets, 24 Count", "price": 8.37 },
-  //     { "name": "AZO Yeast Plus Dual Relief Tablets, 60 Count", "price": 8.12 },
-  //     { "name": "AZO D‑Mannose Urinary Tract Health Supplement, 120 Count", "price": 29.29 },
-  //     { "name": "AZO Cranberry Urinary Tract Health Supplement, 50 Count", "price": 8.24 },
-  //     { "name": "AZO Dual Protection Urinary & Vaginal Support Supplement, 30 Count", "price": 32.88 },
-  //     { "name": "AZO Cranberry Urinary Tract Health Gummies Supplement, 72 Count", "price": 12.49 },
-  //     { "name": "AZO Cranberry Urinary Tract Health Supplement, 120 Count", "price": 14.48 },
-  //     { "name": "AZO UTI Test Strips, 3 Test Strips", "price": 11.97 },
+  {
+    store: "Target",
+    name: "Target",
+    slogan: "EXPECT MORE, PAY LESS",
+    phone: "(615) 253-0000",
+    locations: [
+      { "address": "4331 Bardstown Rd, Louisville, KY 40218", "state": "KY" },
+      { "address": "1151 S College Ave, Fort Collins, CO 80524", "state": "CO" },
+      { "address": "100 S Wabash Ave, Chicago, IL 60603", "state": "IL" },
+      { "address": "555 S Main St, Salt Lake City, UT 84111", "state": "UT" },
+      { "address": "8001 Maryland Ave, St. Louis, MO 63105", "state": "MO" }
+    ],
+    products: [
+      { "name": "AZO D‑Mannose Urinary Tract Health Ready‑to‑Mix Supplement, Raspberry Lemonade, 10 Packets", "price": 19.77 },
+      { "name": "AZO Urinary Pain Relief Maximum Strength Tablets, 24 Count", "price": 8.53 },
+      { "name": "AZO Urinary Tract Defense Tablets, 24 Count", "price": 8.37 },
+      { "name": "AZO Yeast Plus Dual Relief Tablets, 60 Count", "price": 8.12 },
+      { "name": "AZO D‑Mannose Urinary Tract Health Supplement, 120 Count", "price": 29.29 },
+      { "name": "AZO Cranberry Urinary Tract Health Supplement, 50 Count", "price": 8.24 },
+      { "name": "AZO Dual Protection Urinary & Vaginal Support Supplement, 30 Count", "price": 32.88 },
+      { "name": "AZO Cranberry Urinary Tract Health Gummies Supplement, 72 Count", "price": 12.49 },
+      { "name": "AZO Cranberry Urinary Tract Health Supplement, 120 Count", "price": 14.48 },
+      { "name": "AZO UTI Test Strips, 3 Test Strips", "price": 11.97 },
 
-  //     // 
-  //     { "name": "Dove Whole Body Deodorant 120ml", "price": 76.00 },
+      // 
+      { "name": "Dove Whole Body Deodorant 120ml", "price": 76.00 },
 
-  //     // 
+      // 
 
-  //     { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 16.49 },
-  //   ]
-  // },
+      { "name": "Greenies Feline Catnip Flavor Dental Treats Mega Size 130g 9.75oz", "price": 16.49 },
+    ]
+  },
 
 
   // {
@@ -82,53 +82,53 @@ const companies = [
 
 
 
-  // {
-  //   store: "Electronics & Accessories",
-  //   name: "Target",
-  //   slogan: "Together we are a target",
-  //   phone: "(407) 734-7200",
-  //   locations: [
-  //     { address: "450 S Orange Ave, Orlando, FL 32801", state: "FL" },
-  //     { address: "800 N Magnolia Ave, Orlando, FL 32803", state: "FL" },
-  //     { address: "25-01 Jackson Ave, Long Island City, NY 11101", state: "NY" },
-  //     { address: "139 Flatbush Ave, Brooklyn, NY 11217", state: "NY" },
-  //     { address: "88-01 Queens Blvd, Elmhurst, NY 11373", state: "NY" },
-  //     { address: "255 Greenwich St, New York, NY 10007", state: "NY" },
-  //     { address: "445 Albee Square W, Brooklyn, NY 11201", state: "NY" },
-  //     { address: "40-25 82nd St, Elmhurst, NY 11105", state: "NY" },
-  //     { address: "700 Exterior St, Bronx, NY 10451", state: "NY" },
-  //     { address: "600 Broadway, New York, NY 10012", state: "NY" },
-  //     { address: "112 W 34th St, New York, NY 10120", state: "NY" },
-  //     { address: "400 Grand St, New York, NY 10002", state: "NY" },
-  //     { address: "150 E 86th St, New York, NY 10028", state: "NY" },
-  //     { address: "500 E 14th St, New York, NY 10009", state: "NY" },
-  //     { address: "1201 3rd Ave, New York, NY 10021", state: "NY" },
-  //     { address: "795 Columbus Ave, New York, NY 10025", state: "NY" },
-  //     { address: "237 W 42nd St, New York, NY 10036", state: "NY" },
-  //     { address: "512 2nd Ave, New York, NY 10016", state: "NY" },
-  //     { address: "815 Hutchinson River Pkwy, Bronx, NY 10465", state: "NY" },
-  //     { address: "40 W 225th St #50, Bronx, NY 10463", state: "NY" },
-  //     { address: "22-11 31st St, Astoria, NY 11105", state: "NY" },
-  //     { address: "10 Union Sq E, New York, NY 10003", state: "NY" },
-  //     { address: "215 E Fordham Rd, Bronx, NY 10458", state: "NY" },
-  //     { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
-  //     { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
-  //     { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
-  //     { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
-  //     { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
-  //     { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
-  //     { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
-  //     { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
-  //     { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
-  //     { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
-  //   ],
-  //   products: [
-  //     { name: "SteelSeries Arctics Nova 3X Lavender", price: 109.99 },
-  //     { name: "SteelSeries Arctics Nova 3X White", price: 109.99 },
-  //     { name: "SteelSeries Arctics Nova 3X Aqua", price: 109.99 },
-  //     { name: "SteelSeries Nova 7X Wireless Headset with Booster Pack", price: 180.99 }
-  //   ]
-  // },
+  {
+    store: "Electronics & Accessories",
+    name: "Target",
+    slogan: "Together we are a target",
+    phone: "(407) 734-7200",
+    locations: [
+      { address: "450 S Orange Ave, Orlando, FL 32801", state: "FL" },
+      { address: "800 N Magnolia Ave, Orlando, FL 32803", state: "FL" },
+      { address: "25-01 Jackson Ave, Long Island City, NY 11101", state: "NY" },
+      { address: "139 Flatbush Ave, Brooklyn, NY 11217", state: "NY" },
+      { address: "88-01 Queens Blvd, Elmhurst, NY 11373", state: "NY" },
+      { address: "255 Greenwich St, New York, NY 10007", state: "NY" },
+      { address: "445 Albee Square W, Brooklyn, NY 11201", state: "NY" },
+      { address: "40-25 82nd St, Elmhurst, NY 11105", state: "NY" },
+      { address: "700 Exterior St, Bronx, NY 10451", state: "NY" },
+      { address: "600 Broadway, New York, NY 10012", state: "NY" },
+      { address: "112 W 34th St, New York, NY 10120", state: "NY" },
+      { address: "400 Grand St, New York, NY 10002", state: "NY" },
+      { address: "150 E 86th St, New York, NY 10028", state: "NY" },
+      { address: "500 E 14th St, New York, NY 10009", state: "NY" },
+      { address: "1201 3rd Ave, New York, NY 10021", state: "NY" },
+      { address: "795 Columbus Ave, New York, NY 10025", state: "NY" },
+      { address: "237 W 42nd St, New York, NY 10036", state: "NY" },
+      { address: "512 2nd Ave, New York, NY 10016", state: "NY" },
+      { address: "815 Hutchinson River Pkwy, Bronx, NY 10465", state: "NY" },
+      { address: "40 W 225th St #50, Bronx, NY 10463", state: "NY" },
+      { address: "22-11 31st St, Astoria, NY 11105", state: "NY" },
+      { address: "10 Union Sq E, New York, NY 10003", state: "NY" },
+      { address: "215 E Fordham Rd, Bronx, NY 10458", state: "NY" },
+      { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
+      { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
+      { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
+      { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
+      { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
+      { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
+      { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
+      { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
+      { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
+      { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
+    ],
+    products: [
+      { name: "SteelSeries Arctics Nova 3X Lavender", price: 109.99 },
+      { name: "SteelSeries Arctics Nova 3X White", price: 109.99 },
+      { name: "SteelSeries Arctics Nova 3X Aqua", price: 109.99 },
+      { name: "SteelSeries Nova 7X Wireless Headset with Booster Pack", price: 180.99 }
+    ]
+  },
 
   {
     store: "Walmart",
@@ -199,38 +199,38 @@ const companies = [
   //   ]
   // },
 
-  // {
-  //   store: "WholeFoods",
-  //   name: "WholeFoods",
-  //   slogan: "",
-  //   phone: "(203) 877-4281",
-  //   locations: [
-  //     { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
-  //     { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
-  //     { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
-  //     { address: "66 Broadway, New York, NY 10005", state: "NY" },
-  //     { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
-  //     { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
-  //     { address: "250 7th Ave, New York, NY 10001", state: "NY" },
-  //     { address: "301 W 50th St, New York, NY 10019", state: "NY" },
-  //     { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
-  //     { address: "226 E 57th St, New York, NY 10022", state: "NY" }
+  {
+    store: "WholeFoods",
+    name: "WholeFoods",
+    slogan: "",
+    phone: "(203) 877-4281",
+    locations: [
+      { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
+      { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
+      { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
+      { address: "66 Broadway, New York, NY 10005", state: "NY" },
+      { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
+      { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
+      { address: "250 7th Ave, New York, NY 10001", state: "NY" },
+      { address: "301 W 50th St, New York, NY 10019", state: "NY" },
+      { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
+      { address: "226 E 57th St, New York, NY 10022", state: "NY" }
 
-  //   ],
-  //   products: [
-  //     { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
-  //     { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
-  //     { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
-  //     { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
-  //     { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
-  //     // 
-  //     { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
-  //     { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
-  //     { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
-  //     { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
-  //     { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
-  //   ]
-  // },
+    ],
+    products: [
+      { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
+      { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
+      { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
+      { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
+      { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
+      // 
+      { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
+      { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
+      { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
+      { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
+      { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
+    ]
+  },
 
 
   // {
