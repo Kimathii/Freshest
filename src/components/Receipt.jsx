@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import generateReceipt from "../utils/generateReceipt";
 import "../styles/receipt.css";
 
@@ -29,9 +29,20 @@ const Receipt = () => {
     "WholeFoods": "/logos/wholefoods.png",
   };
 
+  const barcodeBars = useMemo(() => {
+    return Array.from({ length: 45 }).map(() => ({
+      width: Math.random() * 4 + 1,
+      marginRight: Math.random() * 3 + 1
+    }));
+  }, [receipt]);
+
+  const barcodeNumber = useMemo(() => {
+    return `${receipt.orderNumber.replace("#", "")}${receipt.cardLast4}${Math.floor(Math.random() * 900000 + 100000)}`;
+  }, [receipt]);
+
   return (
     <div
-      className={`receipt ${receipt.company === "Petco" ? "petco" : ""} ${receipt.company === "Sam's Club" ? "sams-club" : ""} ${receipt.company === "Target" ? "target" : ""} ${receipt.company === "Walmart" ? "walmart" : ""} ${receipt.company === "WholeFoods" ? "wholefoods" : ""}`}
+      className={`receipt ${receipt.company === "Petco" ? "petco" : ""} ${receipt.company === "Sam's Club" ? "sams-club" : ""} target`}
       onDoubleClick={handleGenerateNew}
     >
       <div className="logo-container">
@@ -42,99 +53,88 @@ const Receipt = () => {
         />
       </div>
 
-      <p className="slogan">{receipt.slogan}</p>
-      <p className="center">{receipt.address}</p>
-      <p className="center">{receipt.phone}</p>
-
-      <hr />
-
-      <div className="meta">
-        <p>Order: {receipt.orderNumber}</p>
-        <p>Date: {receipt.date}</p>
+      <div className="target-header">
+        <p className="center" style={{textTransform: "uppercase"}}>{receipt.company}</p>
+        <p className="center">{receipt.address.split(',')[0]}</p>
+        <p className="center">{receipt.address.split(',').slice(1).join(',').trim()}</p>
+        <p className="center">{receipt.phone}</p>
       </div>
 
-      <hr />
+      <div className="target-meta">
+        <p>
+          <span>Date: {receipt.date.split(" ")[0]}</span>
+          <span>Time: {receipt.date.split(" ")[1]} {receipt.date.split(" ")[2]}</span>
+          <span>Register: 03</span>
+        </p>
+        <p>
+          <span>Transaction: {receipt.orderNumber.replace("#", "")}</span>
+          <span>Cashier: David R.</span>
+        </p>
+      </div>
+
+      <div className="dotted-line"></div>
 
       <ul>
         {receipt.items.map((item, index) => (
-          <li key={index}>
-            <span>
-              {receipt.company === "Petco" ? (
-                <>
-                  {item.itemNumber && <span className="item-number">{item.itemNumber}</span>}{" "}
-                  {item.quantity}x {item.name}
-                </>
-              ) : receipt.company === "Sam's Club" ? (
-                <>
-                  {item.name}
-                </>
-              ) : (
-                <>
-                  {item.quantity}x {item.name}{" "}
-                  {item.itemNumber && <span className="item-number">{item.itemNumber}</span>}
-                </>
-              )}
-            </span>
-            <span>${item.total.toFixed(2)}</span>
+          <li key={index} className="target-item">
+            <span>{item.name}</span>
+            <span>{item.total.toFixed(2)}</span>
           </li>
         ))}
       </ul>
 
-      <hr />
-
       <div className="totals">
         <p>
-          <span>Subtotal</span>
-          <span className="amount">
-            ${Number(receipt.subtotal).toFixed(2)}
-          </span>
+          <span>SUBTOTAL</span>
+          <span className="amount">{Number(receipt.subtotal).toFixed(2)}</span>
         </p>
-
         <p>
-          <span>Tax</span>
-          <span className="amount">
-            ${Number(receipt.tax).toFixed(2)}
-          </span>
+          <span>TAX 1 8.25%</span>
+          <span className="amount">{Number(receipt.tax).toFixed(2)}</span>
         </p>
-
         <p>
-          <strong>TOTAL</strong>
-          <strong className="amount">
-            ${Number(receipt.total).toFixed(2)}
-          </strong>
+          <span>TOTAL</span>
+          <span className="amount">{Number(receipt.total).toFixed(2)}</span>
+        </p>
+        <p>
+          <span>PAID CREDIT CARD</span>
+          <span className="amount">{Number(receipt.total).toFixed(2)}</span>
         </p>
       </div>
-
-      <hr />
 
       <div className="payments">
         {receipt.payments.card > 0 && (
-          <>
-            <p>CREDIT CARD AUTH ${receipt.payments.card.toFixed(2)}</p>
-            <p>
-              {receipt.cardType} •••• {receipt.cardLast4}
-            </p>
-            <p>{receipt.approvalText}</p>
-            <p>AUTH# {receipt.authCode}</p>
-          </>
+          <div className="target-payments">
+            <p>PAID: CREDIT CARD</p>
+            <p>Card: **** **** **** {receipt.cardLast4}</p>
+            <p>Auth: {receipt.authCode}</p>
+            <p>CHIP READ</p>
+          </div>
         )}
       </div>
 
-      <hr />
-
       <div className="barcode-container">
-        <div className="barcode"></div>
-        <div className="barcode-label">{receipt.orderNumber}</div>
+        <div className="barcode-visual" style={{display: 'flex', height: '40px', justifyContent: 'center'}}>
+          {barcodeBars.map((bar, i) => (
+            <div key={i} style={{
+              width: `${bar.width}px`,
+              height: '100%',
+              backgroundColor: '#000',
+              marginRight: `${bar.marginRight}px`
+            }}></div>
+          ))}
+        </div>
+        <div className="barcode-label">
+          {barcodeNumber}
+        </div>
       </div>
 
-      <p className="thank-you">
-        {receipt.company === "Sam's Club"
-          ? "Visit Sam's club to see your savings"
-          : "Thank you for your visit!"}
-      </p>
-      {receipt.company === "Sam's Club" && (
-        <p className="member-copy"><strong>**MEMBER COPY**</strong></p>
-      )}
+      <div className="target-footer" style={{marginTop: "20px"}}>
+        <p className="center"># ITEMS SOLD {receipt.items.length}</p>
+        <p className="center">THANK YOU FOR SHOPPING AT {receipt.company.toUpperCase()}!</p>
+        <p className="center">EARN REWARDS JOIN Circle Rewards</p>
+        <p className="center">Go to: {receipt.company.toLowerCase().replace(/[^a-z]/g, "")}.com/circle</p>
+      </div>
     </div>
   );
 };

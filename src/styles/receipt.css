@@ -8,8 +8,8 @@ body {
 
 /* RECEIPT CONTAINER */
 .receipt {
-  width: 260px;
-  max-width: 92vw;
+  width: 360px;
+  max-width: 95vw;
   background: #fff;
   margin: 40px auto;
   padding: 12px;
@@ -17,6 +17,9 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   color: #000;
   position: relative;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  transform: scaleY(1.08);
 }
 
 .receipt.petco::before {
@@ -39,15 +42,11 @@ body {
   max-width: 95vw;
 }
 
-.receipt.target .logo-container {
-  margin-bottom: -10px;
-}
-
 /* LOGO */
 .receipt .logo-container {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 0px;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
 
 .receipt .receipt-logo {
@@ -71,14 +70,6 @@ body {
   max-width: 400px;
   max-height: 120px;
   min-width: unset;
-}
-
-.receipt.wholefoods .logo-container {
-  margin-bottom: -10px;
-}
-
-.receipt.walmart .logo-container {
-  margin-bottom: -10px;
 }
 
 /* HEADINGS */
@@ -108,10 +99,10 @@ body {
 }
 
 /* DIVIDER */
-.receipt hr {
+.receipt .dotted-line {
   border: none;
-  border-top: 1px solid #000;
-  margin: 4px 0;
+  border-top: 2px dotted #000;
+  margin: 12px 0;
 }
 
 /* LISTS */
@@ -148,7 +139,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 30%;
   margin: 2px 0;
 }
 
@@ -256,3 +246,26 @@ body {
     padding: 8px;
   }
 }
+
+/* TARGET SPECIFIC CSS (NOW APPLIED TO ALL) */
+.receipt .target-meta {
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: left;
+}
+
+.receipt .target-meta p {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0;
+}
+
+.receipt li.target-item {
+  margin-bottom: 12px;
+}
+
+.receipt .target-payments p {
+  display: block;
+  text-align: left;
+  margin: 0;
+}

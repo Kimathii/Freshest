@@ -21,6 +21,14 @@ const STATE_TAX = {
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const priceWithVariance = (price) => +(price + (Math.random() * 4 - 2)).toFixed(2);
+const shuffleArray = (arr) => {
+  const newArr = [...arr];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
 
 const generateOrderNumber = () => `#${getRandomInt(10000, 99999)}`;
 const formatDate = () => {
@@ -65,11 +73,17 @@ const generateItems = (products, companyName) => {
 
   // Special case for Target
   if (companyName === "Target") {
-    const items = [];
+    let items = [];
 
     // Check if this is the "Second Target" (Tylenol & Honest)
     // We identify it by checking if the product list contains Tylenol or Honest products
     const isSecondTarget = products.some(p => p.name.includes("Tylenol") || p.name.includes("Honest"));
+
+    // Check if this is the "Third Target" (Seedlip, Knob Creek, Canadian)
+    const isThirdTarget = products.some(p => p.name.includes("Seedlip") || p.name.includes("Knob Creek") || p.name.includes("Canadian"));
+
+    // Check if this is the "First Target" (AZO, Dove, Greenies)
+    const isFirstTarget = products.some(p => p.name.includes("AZO") || p.name.includes("Dove") || p.name.includes("Greenies"));
 
     if (isSecondTarget) {
       const tylenolProducts = products.filter(p => p.name.includes("Tylenol"));
@@ -102,14 +116,7 @@ const generateItems = (products, companyName) => {
           total: +(price * quantity).toFixed(2)
         });
       }
-
-      return items;
-    }
-
-    // Check if this is the "Third Target" (Seedlip, Knob Creek, Canadian)
-    const isThirdTarget = products.some(p => p.name.includes("Seedlip") || p.name.includes("Knob Creek") || p.name.includes("Canadian"));
-
-    if (isThirdTarget) {
+    } else if (isThirdTarget) {
       const seedlipProducts = products.filter(p => p.name.includes("Seedlip"));
       const knobCreekProducts = products.filter(p => p.name.includes("Knob Creek"));
       const canadianProducts = products.filter(p => p.name.includes("Canadian"));
@@ -155,58 +162,71 @@ const generateItems = (products, companyName) => {
           total: +(price * quantity).toFixed(2)
         });
       }
+    } else if (isFirstTarget) {
+      const azoProducts = products.filter(p => p.name.includes("AZO"));
+      const doveProducts = products.filter(p => p.name.includes("Dove"));
+      const greeniesProducts = products.filter(p => p.name.includes("Greenies"));
 
-      return items;
+      // AZO: 1 random product, qty 3-4
+      if (azoProducts.length > 0) {
+        const product = getRandomItem(azoProducts);
+        const quantity = getRandomInt(3, 4);
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // Dove: 1 random product, qty 5
+      if (doveProducts.length > 0) {
+        const product = getRandomItem(doveProducts);
+        const quantity = 5;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // Greenies: 1 random product, qty 3
+      if (greeniesProducts.length > 0) {
+        const product = getRandomItem(greeniesProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+    } else {
+      // Fallback to default random item generation for other Target stores (e.g. Electronics & Accessories)
+      const itemCount = 3;
+      for (let i = 0; i < itemCount; i++) {
+        const product = getRandomItem(products);
+        const quantity = getRandomInt(1, 3);
+        const price = priceWithVariance(product.price);
+        const itemNumber = getRandomInt(10000000, 99999999);
+        items.push({
+          itemNumber,
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
     }
 
-    // "First Target" (AZO, Dove, Greenies) logic
-    const azoProducts = products.filter(p => p.name.includes("AZO"));
-    const doveProducts = products.filter(p => p.name.includes("Dove"));
-    const greeniesProducts = products.filter(p => p.name.includes("Greenies"));
-
-    // AZO: 1 random product, qty 3-4
-    if (azoProducts.length > 0) {
-      const product = getRandomItem(azoProducts);
-      const quantity = getRandomInt(3, 4);
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // Dove: 1 random product, qty 5
-    if (doveProducts.length > 0) {
-      const product = getRandomItem(doveProducts);
-      const quantity = 5;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // Greenies: 1 random product, qty 3
-    if (greeniesProducts.length > 0) {
-      const product = getRandomItem(greeniesProducts);
-      const quantity = 3;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    return items;
+    return shuffleArray(items);
   }
 
   // Special case for Walmart
