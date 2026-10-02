@@ -341,6 +341,32 @@ const companies = [
       { name: "Eukanuba Medium Breed Puppy", price: 64.99 }
     ]
   },
+
+  // Third Tractor Supply format: Eukanuba x3 + one random Olay
+  {
+    store: "Tractor Supply",
+    name: "Tractor Supply",
+    slogan: "tractorsupply.com",
+    phone: "(800) 555-0199",
+    locations: [
+      { address: "2195 Hamner Ave, Norco, CA 92860", state: "CA" },
+      { address: "3747 E Palmdale Blvd, Palmdale, CA 93550", state: "CA" },
+      { address: "397 W Los Angeles Ave, Moorpark, CA 93021", state: "CA" },
+      { address: "27826 Clinton Keith Rd, Murrieta, CA 92562", state: "CA" },
+      { address: "42625 Jackson St, Indio, CA 92203", state: "CA" },
+      { address: "6710 Colony St, Bakersfield, CA 93307", state: "CA" },
+      { address: "9060 S Rainbow Blvd, Las Vegas, NV 89139", state: "NV" },
+      { address: "8535 E Speedway Blvd, Tucson, AZ 85710", state: "AZ" },
+      { address: "10870 Balls Ford Rd, Manassas, VA 20109", state: "VA" }
+    ],
+    products: [
+      { name: "Eukanuba Adult Large Breed", price: 74.99 },
+      { name: "Eukanuba Medium Breed Puppy", price: 64.99 },
+      { name: "Olay Regenerist (Retinol 24) Night cream fragrance free", price: 33.99 },
+      { name: "Olay Regenerist micro-Sculpting cream", price: 33.99 },
+      { name: "Olay Super Serum", price: 33.99 }
+    ]
+  },
   {
     store: "CVS",
     name: "CVS",

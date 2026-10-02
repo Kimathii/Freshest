@@ -354,7 +354,39 @@ const generateItems = (products, companyName) => {
     const items = [];
     const eukanubaProducts = products.filter(p => p.name.includes("Eukanuba"));
     const royalCaninProducts = products.filter(p => p.name.includes("Royal Canin"));
+    const olayProducts = products.filter(p => p.name.includes("Olay"));
 
+    // Third format: Eukanuba x3 + one random Olay
+    if (olayProducts.length > 0) {
+      // 1 Eukanuba product (Quantity: 3)
+      if (eukanubaProducts.length > 0) {
+        const product = getRandomItem(eukanubaProducts);
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+
+      // 1 random Olay product (Quantity: 1)
+      const olayProduct = getRandomItem(olayProducts);
+      const olayPrice = priceWithVariance(olayProduct.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: olayProduct.name,
+        quantity: 1,
+        price: olayPrice,
+        total: +olayPrice.toFixed(2)
+      });
+
+      return items;
+    }
+
+    // Original formats: Eukanuba x3 + Royal Canin x1
     // 1 Eukanuba product (Quantity: 3)
     if (eukanubaProducts.length > 0) {
       const product = getRandomItem(eukanubaProducts);
