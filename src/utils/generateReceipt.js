@@ -328,6 +328,64 @@ const generateItems = (products, companyName) => {
     return items;
   }
 
+  // Special case for CVS
+  if (companyName === "CVS") {
+    const items = [];
+    const shuffled = [...products].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 2);
+
+    for (const product of selected) {
+      const quantity = 2;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    return items;
+  }
+
+  // Special case for Tractor Supply
+  if (companyName === "Tractor Supply") {
+    const items = [];
+    const eukanubaProducts = products.filter(p => p.name.includes("Eukanuba"));
+    const royalCaninProducts = products.filter(p => p.name.includes("Royal Canin"));
+
+    // 1 Eukanuba product (Quantity: 3)
+    if (eukanubaProducts.length > 0) {
+      const product = getRandomItem(eukanubaProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 1 Royal Canin product (Quantity: 1)
+    if (royalCaninProducts.length > 0) {
+      const product = getRandomItem(royalCaninProducts);
+      const quantity = 1;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    return items;
+  }
+
   // Special case for Petco
   if (companyName === "Petco") {
     const items = [];
@@ -494,6 +552,10 @@ const generateReceipt = () => {
     return prefix + getRandomInt(10000, 99999) + getRandomItem(letters);
   })();
 
+  const cashiers = ["David R.", "Sarah M.", "Michael T.", "Jessica L.", "John K.", "Emily W.", "Chris P.", "Anna B."];
+  const cashier = getRandomItem(cashiers);
+  const register = String(getRandomInt(1, 15)).padStart(2, "0");
+
   return {
     company: brand.name,
     slogan: brand.slogan,
@@ -514,7 +576,9 @@ const generateReceipt = () => {
     cardType,
     cardLast4,
     approvalText,
-    authCode
+    authCode,
+    cashier,
+    register
   };
 };
 

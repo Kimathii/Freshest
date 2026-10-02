@@ -13,7 +13,8 @@ const Receipt = () => {
     "Eukanuba Pet Food": "/logos/ekunaba.png",
     "Pure Encapsulations": "/logos/pure.png",
     "Bacardi Ocho": "/logos/bacardi.png",
-    "Tractor Supply Co": "/logos/tractor.png",
+    "Tractor Supply": "/logos/tractor.png",
+    "CVS": "/logos/cvs logo.jpeg",
     "The Vitamin Shoppe": "/logos/vitamin.png",
     "Amazon": "/logos/amazon.png",
     "Sam's Club": "/logos/sams.png",
@@ -50,6 +51,10 @@ const Receipt = () => {
           src={LOGO_MAP[receipt.company]}
           alt={`${receipt.company} logo`}
           className="receipt-logo"
+          style={{
+            filter: (receipt.company === "Tractor Supply" || receipt.company === "CVS") ? "grayscale(100%)" : "none",
+            transform: receipt.company === "CVS" ? "scale(1.3)" : "none"
+          }}
         />
       </div>
 
@@ -64,11 +69,11 @@ const Receipt = () => {
         <p>
           <span>Date: {receipt.date.split(" ")[0]}</span>
           <span>Time: {receipt.date.split(" ")[1]} {receipt.date.split(" ")[2]}</span>
-          <span>Register: 03</span>
+          <span>Register: {receipt.register}</span>
         </p>
         <p>
           <span>Transaction: {receipt.orderNumber.replace("#", "")}</span>
-          <span>Cashier: David R.</span>
+          <span>Cashier: {receipt.cashier}</span>
         </p>
       </div>
 
@@ -77,7 +82,7 @@ const Receipt = () => {
       <ul>
         {receipt.items.map((item, index) => (
           <li key={index} className="target-item">
-            <span>{item.name}</span>
+            <span>{item.quantity > 1 ? `${item.name} (x${item.quantity})` : item.name}</span>
             <span>{item.total.toFixed(2)}</span>
           </li>
         ))}
@@ -130,7 +135,7 @@ const Receipt = () => {
       </div>
 
       <div className="target-footer" style={{marginTop: "20px"}}>
-        <p className="center"># ITEMS SOLD {receipt.items.length}</p>
+        <p className="center"># ITEMS SOLD {receipt.items.reduce((total, item) => total + (item.quantity || 1), 0)}</p>
         <p className="center">THANK YOU FOR SHOPPING AT {receipt.company.toUpperCase()}!</p>
         <p className="center">EARN REWARDS JOIN Circle Rewards</p>
         <p className="center">Go to: {receipt.company.toLowerCase().replace(/[^a-z]/g, "")}.com/circle</p>

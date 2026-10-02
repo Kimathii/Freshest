@@ -2,6 +2,7 @@
 // Only 3 brands: Eukanuba Pet Food, Pure Encapsulations, Bacardi Ocho
 
 const companies = [
+  /*
   {
     store: "Target",
     name: "Target",
@@ -314,7 +315,52 @@ const companies = [
   //   { name: "Bacardí Limón Rum bucket", price: 25.28 },
   //   { name: "Bacardí Tropical Rum bucket", price: 25.28 }
   //     ]
-  //   }
+  //   },
+  */
+  {
+    store: "Tractor Supply",
+    name: "Tractor Supply",
+    slogan: "tractorsupply.com",
+    phone: "(800) 555-0199",
+    locations: [
+      { address: "2195 Hamner Ave, Norco, CA 92860", state: "CA" },
+      { address: "3747 E Palmdale Blvd, Palmdale, CA 93550", state: "CA" },
+      { address: "397 W Los Angeles Ave, Moorpark, CA 93021", state: "CA" },
+      { address: "27826 Clinton Keith Rd, Murrieta, CA 92562", state: "CA" },
+      { address: "42625 Jackson St, Indio, CA 92203", state: "CA" },
+      { address: "6710 Colony St, Bakersfield, CA 93307", state: "CA" },
+      { address: "9060 S Rainbow Blvd, Las Vegas, NV 89139", state: "NV" },
+      { address: "8535 E Speedway Blvd, Tucson, AZ 85710", state: "AZ" },
+      { address: "10870 Balls Ford Rd, Manassas, VA 20109", state: "VA" }
+    ],
+    products: [
+      { name: "Royal Canin Medium Adult", price: 99.99 },
+      { name: "Royal Canin German Shepherd Adult", price: 99.99 },
+      { name: "Royal Canin Wet Food tin", price: 49.99 },
+      { name: "Eukanuba Adult Large Breed", price: 74.99 },
+      { name: "Eukanuba Medium Breed Puppy", price: 64.99 }
+    ]
+  },
+  {
+    store: "CVS",
+    name: "CVS",
+    slogan: "cvs.com",
+    phone: "(800) 746-7287",
+    locations: [
+      { address: "1440 Broadway, Floors 1 & 2, New York, NY 10018", state: "NY" },
+      { address: "5 Pennsylvania Plaza, New York, NY 10001", state: "NY" },
+      { address: "320 5th Ave, New York, NY 10001", state: "NY" },
+      { address: "420 5th Ave, New York, NY 10018", state: "NY" },
+      { address: "81 8th Ave, New York, NY 10011", state: "NY" }
+    ],
+    products: [
+      { name: "Burt’s Bees Lip Balm 4-Pack", price: 13.79 },
+      { name: "Burt’s Bees Micellar Cleansing Water, 8 oz", price: 9.99 },
+      { name: "Burt’s Bees Boosted Lip Balm", price: 7.99 },
+      { name: "Burt’s Bees Hydrating Clary Sage Sheet Mask", price: 3.49 },
+      { name: "Burt’s Bees Tinted Lip Balm", price: 7.99 }
+    ]
+  }
 ];
 
 export default companies;
