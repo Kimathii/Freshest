@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import generateReceipt from "../utils/generateReceipt";
+import BarcodeDisplay from "./BarcodeDisplay";
 import "../styles/receipt.css";
 
 const Receipt = () => {
@@ -31,12 +32,7 @@ const Receipt = () => {
     "Kroger": "/logos/kroger.png",
   };
 
-  const barcodeBars = useMemo(() => {
-    return Array.from({ length: 45 }).map(() => ({
-      width: Math.random() * 4 + 1,
-      marginRight: Math.random() * 3 + 1
-    }));
-  }, [receipt]);
+  // barcodeBars removed — barcode is now rendered as a real SVG via BarcodeDisplay / JsBarcode
 
   const barcodeNumber = useMemo(() => {
     return `${receipt.orderNumber.replace("#", "")}${receipt.cardLast4}${Math.floor(Math.random() * 900000 + 100000)}`;
@@ -119,21 +115,7 @@ const Receipt = () => {
         )}
       </div>
 
-      <div className="barcode-container">
-        <div className="barcode-visual" style={{display: 'flex', height: '40px', justifyContent: 'center'}}>
-          {barcodeBars.map((bar, i) => (
-            <div key={i} style={{
-              width: `${bar.width}px`,
-              height: '100%',
-              backgroundColor: '#000',
-              marginRight: `${bar.marginRight}px`
-            }}></div>
-          ))}
-        </div>
-        <div className="barcode-label">
-          {barcodeNumber}
-        </div>
-      </div>
+      <BarcodeDisplay value={barcodeNumber} height={40} width={1.5} margin={6} />
 
       <div className="target-footer" style={{marginTop: "20px"}}>
         <p className="center"># ITEMS SOLD {receipt.items.reduce((total, item) => total + (item.quantity || 1), 0)}</p>

@@ -202,35 +202,18 @@ body {
   opacity: 0.85;
 }
 
-/* BARCODE */
+/* BARCODE — SVG rendered by JsBarcode */
 .receipt .barcode-container {
   margin: 20px auto;
   text-align: center;
 }
 
-.receipt .barcode {
-  height: 30px;
-  width: 120px;
-  background: repeating-linear-gradient(to right,
-      #000 0px,
-      #000 2px,
-      #fff 2px,
-      #fff 4px,
-      #000 4px,
-      #000 6px,
-      #fff 6px,
-      #fff 9px,
-      #000 9px,
-      #000 11px,
-      #fff 11px,
-      #fff 13px,
-      #000 13px,
-      #000 15px,
-      #fff 15px,
-      #fff 17px);
-  background-size: 180px 100%;
-  image-rendering: pixelated;
-  display: inline-block;
+.receipt .barcode-svg {
+  display: block;
+  margin: 0 auto;
+  /* Ensure the SVG is never clipped */
+  max-width: 100%;
+  overflow: visible;
 }
 
 .receipt .barcode-label {
@@ -268,4 +251,60 @@ body {
   display: block;
   text-align: left;
   margin: 0;
+}
+
+/* ============================================================
+   PRINT STYLES
+   The core fix: SVG elements are vector and always printed, but
+   we must ensure no print stylesheet hides or clips the barcode,
+   and that backgrounds on the receipt itself are preserved.
+   ============================================================ */
+@media print {
+  /* Hide browser chrome, keep only the receipt */
+  body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Reset receipt shadow/radius for paper */
+  .receipt {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0 auto;
+    /* Force the receipt background to white even in print */
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Barcode container — visible, not clipped */
+  .receipt .barcode-container {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    page-break-inside: avoid;
+  }
+
+  /* SVG barcode — force display and exact color reproduction */
+  .receipt .barcode-svg {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    /* Preserve exact SVG fill colors (black bars) */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Barcode label beneath bars */
+  .receipt .barcode-label {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Dotted divider — ensure it prints */
+  .receipt .dotted-line {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
