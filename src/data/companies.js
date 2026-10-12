@@ -130,6 +130,7 @@ const companies = [
       { name: "SteelSeries Nova 7X Wireless Headset with Booster Pack", price: 180.99 }
     ]
   },
+  */
 
   {
     store: "Walmart",
@@ -149,90 +150,66 @@ const companies = [
       { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
     ],
     products: [
-      { "name": "Native Deodorant Stick Coconut & Vanilla ", "price": 32.99 },
-      { "name": "Native Sensitive Deodorant Sea Salt & Cedar (baking-soda-free)", "price": 32.99 },
-      { "name": "Native Sensitive (aluminum-free)", "price": 32.99 },
+      // Pepsi
+      { "name": "Pepsi Zero Sugar 12-pack", "price": 5.98 },
 
-      { "name": "Olay Regenerist (Retinol 24) Night cream fragrance free", "price": 33.99 },
-      { "name": "Olay Regenerist micro-Sculpting cream", "price": 33.99 },
-      { "name": "Olay Super Serum", "price": 33.99 },
+      // Chicken
+      { "name": "Freshness Guaranteed Boneless Skinless Chicken Breasts (4.7-6.1 lb tray)", "price": 11.72 },
+      { "name": "Tyson All Natural Fresh Boneless Skinless Chicken Breasts (1.75-3.0 lb tray)", "price": 8.21 },
+      { "name": "Great Value All Natural Frozen Boneless Skinless Chicken Breasts (3 lb)", "price": 8.94 },
+      { "name": "Chicken thighs", "price": 10.99 },
+      { "name": "Chicken tenders", "price": 10.99 },
+      { "name": "Chicken wings", "price": 10.99 },
+      { "name": "Whole chicken", "price": 10.99 },
 
-      { "name": "Old Spice Gentle Man's Exfoliating Body Wash", "price": 15.99 },
-      { "name": "Old Spice Swagger Made By Cedarwood Antiperspirant", "price": 15.99 },
-      { "name": "Old Spice Fiji", "price": 15.99 },
-      { "name": "Old Spice Gentle Man's Super Hydration Moisturizing Body Wash", "price": 15.99 },
+      // SheaMoisture Deodorant
+      { "name": "SheaMoisture Fresh Coconut & Hibiscus Antiperspirant Stick (2.6 oz)", "price": 9.97 },
+      { "name": "SheaMoisture Whole Body Deodorant Spray (4 oz)", "price": 9.97 },
 
-       { "name": "Stella Rosa Spirits Smooth White", "price": 14.99 }
+      // Always products (prices adjusted to 15.99 if below 15)
+      { "name": "Always Ultra Thin Size 2 Super Pads with Wings (16 ct)", "price": 15.99 },
+      { "name": "Always Ultra Thin Overnight Pads, Size 4 (13 ct)", "price": 15.99 },
+      { "name": "Always Ultra Thin Size 2 Long Super Pads (42 ct)", "price": 15.99 },
+
+      // Merrick Dog Treats
+      { "name": "Merrick Oven Baked Peanut Butter Dog Treats (11 oz)", "price": 7.98 },
+      { "name": "Merrick Power Bites Soft Dog Treats (6 oz)", "price": 7.98 },
+      { "name": "Merrick Fresh Kisses Large Dental Dog Treats (11.5 oz, 7 ct)", "price": 15.98 },
+      { "name": "Merrick Healthy Bites", "price": 10.99 },
+      { "name": "Merrick Lil’ Plates Treats", "price": 10.99 }
     ]
   },
 
   // {
-  //   store: "Walmart",
-  //   name: "Walmart",
+  //   store: "WholeFoods",
+  //   name: "WholeFoods",
   //   slogan: "",
-  //   phone: "(800) 672-4399",
+  //   phone: "(203) 877-4281",
   //   locations: [
-  //     { address: "838 Sunrise Hwy, Bay Shore, NY 11706", state: "NY" },
-  //     { address: "1575 Niagara Falls Blvd, Amherst, NY 14228", state: "NY" },
-  //     { address: "100 Amsterdam Commons, Amsterdam, NY 12010", state: "NY" },
-  //     { address: "4300 Veterans Memorial Dr, Batavia, NY 14020", state: "NY" },
-  //     { address: "495 Boston Post Rd, Port Chester, NY 10573", state: "NY" },
-  //     { address: "1520 Forest Ave, Staten Island, NY 10302", state: "NY" },
-  //     { address: "307 Independence Plz, Selden, NY 11784", state: "NY" },
-  //     { address: "345 Rockaway Tpke, Lawrence, NY 11559", state: "NY" },
-  //     { address: "160-08 Jamaica Ave, Jamaica, NY 11432", state: "NY" },
-  //     { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
+  //     { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
+  //     { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
+  //     { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
+  //     { address: "66 Broadway, New York, NY 10005", state: "NY" },
+  //     { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
+  //     { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
+  //     { address: "250 7th Ave, New York, NY 10001", state: "NY" },
+  //     { address: "301 W 50th St, New York, NY 10019", state: "NY" },
+  //     { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
+  //     { address: "226 E 57th St, New York, NY 10022", state: "NY" }
   //   ],
   //   products: [
-  //     { "name": "Filtrete MPR Rfeillable Air Filter Starter Kit", "price": 89.99 },
-
-  //     { "name": "Stella Rosa Spirits Smooth Red", "price": 14.99 },
-  //     { "name": "Stella Rosa Spirits Smooth Black", "price": 14.99 },
-  //     { "name": "Stella Rosa Spirits Smooth White", "price": 14.99 },
-
-  //     { "name": "Aperol Aperitivo", "price": 11.07 },
-  //     { "name": "SKYY Vodka", "price": 16.01 },
-  //     { "name": "Wild Turkey Bourbon Whisky", "price": 33.21 },
-  //     { "name": "Campari Bitter", "price": 13.65 },
-  //     { "name": "Courvoisier VSOP Cognac", "price": 88.56 },
-  //     { "name": "Espolon Tequila Blanco", "price": 25.83 },
-  //     { "name": "Grand Marnier Cordon Rouge", "price": 33.21 },
+  //     { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
+  //     { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
+  //     { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
+  //     { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
+  //     { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
+  //     { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
+  //     { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
+  //     { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
+  //     { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
+  //     { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
   //   ]
   // },
-
-  {
-    store: "WholeFoods",
-    name: "WholeFoods",
-    slogan: "",
-    phone: "(203) 877-4281",
-    locations: [
-      { address: "4 Union Sq E, New York, NY 10003", state: "NY" },
-      { address: "450 W 33rd St, New York, NY 10001", state: "NY" },
-      { address: "238 Bedford Ave, Brooklyn, NY 11249", state: "NY" },
-      { address: "66 Broadway, New York, NY 10005", state: "NY" },
-      { address: "1400 Waterfront Terrace, Weehawken Township, NJ 07086", state: "NJ" },
-      { address: "1095 6th Ave, New York, NY 10036", state: "NY" },
-      { address: "250 7th Ave, New York, NY 10001", state: "NY" },
-      { address: "301 W 50th St, New York, NY 10019", state: "NY" },
-      { address: "10 Columbus Cir Ste Sc101, New York, NY 10019", state: "NY" },
-      { address: "226 E 57th St, New York, NY 10022", state: "NY" }
-
-    ],
-    products: [
-      { "name": "Garden of Life Raw Organic Perfect Food Green Superfood Powder, 8.3 oz", "price": 34.29 },
-      { "name": "Garden of Life Dr. Formulated Whole Food Magnesium, Raspberry Lemon, 7 oz", "price": 14.87 },
-      { "name": "Garden of Life Organic MyKind Men’s Multivitamin, 120 ct", "price": 39.99 },
-      { "name": "Garden of Life Organic MyKind Women’s 40+ Gummies, 120 ct", "price": 35.99 },
-      { "name": "Garden of Life Dr. Formulated Probiotic 100B, 30 ct", "price": 29.99 },
-      // 
-      { "name": "Nuun Sport Electrolyte Hydration Drink Mix Tablets, 30 Servings", "price": 17.48 },
-      { "name": "Nuun Sport Electrolyte Tablets, 10 count tube", "price": 6.94 },
-      { "name": "Nuun Sport + Caffeine Electrolyte Tablets, 10 count", "price": 7.48 },
-      { "name": "Nuun Energy Electrolyte Drink Tablets, 8-Pack", "price": 29.96 },
-      { "name": "Nuun Zero Sugar Hydration Electrolyte Tablets, 80 servings", "price": 50.83 }
-    ]
-  },
-
 
   // {
   //   store: "Coffee & Beverages",
@@ -249,7 +226,6 @@ const companies = [
   //     { address: "7147 Greenback Ln, Citrus Heights, CA 95621", state: "CA" }
   //   ],
   //   products: [
-  //     // { name: "SamsClubMembership", price: 50 },
   //     { name: "NewSamsClubPlusMembership", price: 110 }
   //   ]
   // },
@@ -261,16 +237,13 @@ const companies = [
   //   phone: "(877) 738-6742",
   //   locations: [
   //     { address: "860 Broadway, New York, NY 10003", state: "NY" },
-
   //   ],
   //   products: [
   //     { "name": "Seedlip Grove 42 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
   //     { "name": "Seedlip Spice 94 Non-Alcoholic Spirit, 700ml", "price": 29.99 },
-
   //     { "name": "Knob Creek Kentucky Straight Bourbon Whiskey, 750ml", "price": 42.99 },
   //     { "name": "Knob Creek 12 Year Bourbon, 750ml", "price": 67.99 },
   //     { "name": "Knob Creek Straight Rye Whiskey, 750ml", "price": 42.99 },
-
   //     { "name": "Canadian Club Canadian Whisky, 750ml", "price": 8.99 },
   //     { "name": "Canadian Club Canadian Whisky, 1L", "price": 17.99 },
   //     { "name": "Canadian Club Canadian Whisky, 1.75L", "price": 19.99 },
@@ -316,7 +289,7 @@ const companies = [
   //   { name: "Bacardí Tropical Rum bucket", price: 25.28 }
   //     ]
   //   },
-  */
+
   {
     store: "Tractor Supply",
     name: "Tractor Supply",
@@ -380,11 +353,8 @@ const companies = [
       { address: "81 8th Ave, New York, NY 10011", state: "NY" }
     ],
     products: [
-      { name: "Burt’s Bees Lip Balm 4-Pack", price: 13.79 },
-      { name: "Burt’s Bees Micellar Cleansing Water, 8 oz", price: 9.99 },
-      { name: "Burt’s Bees Boosted Lip Balm", price: 7.99 },
-      { name: "Burt’s Bees Hydrating Clary Sage Sheet Mask", price: 3.49 },
-      { name: "Burt’s Bees Tinted Lip Balm", price: 7.99 }
+      { name: "OLLY Calm Body Wash (17 fl oz)", price: 12.99 },
+      { name: "OLLY Calm Body Serum (8 oz)", price: 10.00 }
     ]
   }
 ];

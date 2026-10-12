@@ -233,16 +233,17 @@ const generateItems = (products, companyName) => {
   if (companyName === "Walmart") {
     const items = [];
 
-    // Filter products by brand category
-    const olayProducts = products.filter(p => p.name.includes("Olay"));
-    const nativeProducts = products.filter(p => p.name.includes("Native"));
-    const oldSpiceProducts = products.filter(p => p.name.includes("Old Spice"));
-    const stellaRosaProducts = products.filter(p => p.name.includes("Stella Rosa"));
+    // Filter products by category
+    const pepsiProducts = products.filter(p => p.name.includes("Pepsi"));
+    const chickenProducts = products.filter(p => p.name.toLowerCase().includes("chicken"));
+    const sheaProducts = products.filter(p => p.name.includes("SheaMoisture"));
+    const alwaysProducts = products.filter(p => p.name.includes("Always"));
+    const merrickProducts = products.filter(p => p.name.includes("Merrick"));
 
-    // 1. Olay is a constant line item with quantity randomized between 1 and 3
-    if (olayProducts.length > 0) {
-      const product = getRandomItem(olayProducts);
-      const quantity = getRandomInt(1, 3);
+    // 1. Pepsi (Redemptions: 2 -> quantity: 2)
+    if (pepsiProducts.length > 0) {
+      const product = getRandomItem(pepsiProducts);
+      const quantity = 2;
       const price = priceWithVariance(product.price);
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),
@@ -253,31 +254,10 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // Determine target total line items (random between 2 and 4)
-    // Since Olay is always 1, we need to pick targetCount - 1 other categories
-    const targetCount = getRandomInt(2, 4);
-    const neededOthersCount = targetCount - 1;
-
-    // Define the other categories with their candidate lists
-    const otherCategories = [];
-    if (nativeProducts.length > 0) {
-      otherCategories.push({ name: "Native", list: nativeProducts });
-    }
-    if (oldSpiceProducts.length > 0) {
-      otherCategories.push({ name: "Old Spice", list: oldSpiceProducts });
-    }
-    if (stellaRosaProducts.length > 0) {
-      otherCategories.push({ name: "Stella Rosa", list: stellaRosaProducts });
-    }
-
-    // Shuffle the available other categories to pick a random subset
-    const shuffledOthers = [...otherCategories].sort(() => Math.random() - 0.5);
-    const selectedOthers = shuffledOthers.slice(0, Math.min(neededOthersCount, shuffledOthers.length));
-
-    // For each selected category, pick a random product and assign a random quantity (1 to 5)
-    for (const cat of selectedOthers) {
-      const product = getRandomItem(cat.list);
-      const quantity = getRandomInt(1, 5);
+    // 2. Chicken (Redemptions: 2 -> quantity: 2, same receipt as Pepsi)
+    if (chickenProducts.length > 0) {
+      const product = getRandomItem(chickenProducts);
+      const quantity = 2;
       const price = priceWithVariance(product.price);
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),
@@ -288,7 +268,65 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    return items;
+    // 3. SheaMoisture Deodorant (Redemptions: 3 -> quantity: 3)
+    if (sheaProducts.length > 0) {
+      const product = getRandomItem(sheaProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 4. Always products (spend $15 total, two packs each over $15)
+    // Pick 2 packs with quantity: 1 each
+    if (alwaysProducts.length >= 2) {
+      const shuffledAlways = [...alwaysProducts].sort(() => Math.random() - 0.5);
+      const selectedAlways = shuffledAlways.slice(0, 2);
+      for (const product of selectedAlways) {
+        const quantity = 1;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+    } else if (alwaysProducts.length === 1) {
+      const product = alwaysProducts[0];
+      const quantity = 2;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 5. Merrick Dog Treats (Redemptions: 3 -> quantity: 3)
+    if (merrickProducts.length > 0) {
+      const product = getRandomItem(merrickProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // All offers randomly arranged
+    return shuffleArray(items);
   }
 
   // Special case for WholeFoods
@@ -331,11 +369,9 @@ const generateItems = (products, companyName) => {
   // Special case for CVS
   if (companyName === "CVS") {
     const items = [];
-    const shuffled = [...products].sort(() => Math.random() - 0.5);
-    const selected = shuffled.slice(0, 2);
-
-    for (const product of selected) {
-      const quantity = 2;
+    // Include both OLLY options with redemption 3 each (quantities summing up to 6)
+    for (const product of products) {
+      const quantity = 3;
       const price = priceWithVariance(product.price);
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),
