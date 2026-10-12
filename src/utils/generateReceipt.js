@@ -14,7 +14,9 @@ const STATE_TAX = {
   CA: 0.0725,
   OH: 0.0575,
   GA: 0.04,
-  MA: 0.0625
+  MA: 0.0625,
+  TN: 0.07,
+  IN: 0.07
 };
 
 // ---------------- HELPERS ----------------
@@ -57,16 +59,47 @@ const formatDate = () => {
 
 // ---------------- GENERATE ITEMS ----------------
 const generateItems = (products, companyName) => {
-  // Special case for Sam's Club: always show all products, one of each, no item number
+  // Special case for Sam's Club: Cetaphil Moisturizing Cream (Redemptions: 3 -> quantity: 3)
   if (companyName === "Sam's Club") {
     return products.map((product) => {
-      const price = product.price; // Use exact price for memberships
+      const price = priceWithVariance(product.price);
+      const quantity = 3;
       return {
-        itemNumber: null, // No item number for Sam's Club
+        itemNumber: getRandomInt(10000000, 99999999),
         name: product.name,
-        quantity: 1,
+        quantity,
         price,
-        total: price
+        total: +(price * quantity).toFixed(2)
+      };
+    });
+  }
+
+  // Special case for The Vitamin Shoppe: Pure Encapsulations (Redemptions: 3 -> quantity: 3)
+  if (companyName === "The Vitamin Shoppe") {
+    return products.map((product) => {
+      const price = priceWithVariance(product.price);
+      const quantity = 3;
+      return {
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      };
+    });
+  }
+
+  // Special case for Kroger: Orgain Collagen (Redemptions: 3 -> quantity: 3)
+  if (companyName === "Kroger") {
+    return products.map((product) => {
+      const price = priceWithVariance(product.price);
+      const quantity = 3;
+      return {
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
       };
     });
   }
@@ -74,6 +107,25 @@ const generateItems = (products, companyName) => {
   // Special case for Target
   if (companyName === "Target") {
     let items = [];
+
+    // Check if this is Righteous Felon Target
+    const isRighteousFelon = products.some(p => p.name.includes("Righteous Felon"));
+
+    if (isRighteousFelon) {
+      // Righteous Felon (Redemptions: 3 -> quantity: 3)
+      for (const product of products) {
+        const quantity = 3;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+      return items;
+    }
 
     // Check if this is the "Second Target" (Tylenol & Honest)
     // We identify it by checking if the product list contains Tylenol or Honest products
@@ -235,10 +287,13 @@ const generateItems = (products, companyName) => {
 
     // Filter products by category
     const pepsiProducts = products.filter(p => p.name.includes("Pepsi"));
-    const chickenProducts = products.filter(p => p.name.toLowerCase().includes("chicken"));
+    const chickenProducts = products.filter(p => p.name.toLowerCase().includes("chicken") && !p.name.includes("Blue Buffalo"));
     const sheaProducts = products.filter(p => p.name.includes("SheaMoisture"));
     const alwaysProducts = products.filter(p => p.name.includes("Always"));
     const merrickProducts = products.filter(p => p.name.includes("Merrick"));
+    const blueBuffaloProducts = products.filter(p => p.name.includes("Blue Buffalo"));
+    const nextStarProducts = products.filter(p => p.name.includes("NextStar"));
+    const oneTouchProducts = products.filter(p => p.name.includes("OneTouch"));
 
     // 1. Pepsi (Redemptions: 2 -> quantity: 2)
     if (pepsiProducts.length > 0) {
@@ -325,6 +380,48 @@ const generateItems = (products, companyName) => {
       });
     }
 
+    // 6. Blue Buffalo Wilderness Bone Broth Boosted Dry Cat Food (Redemptions: 1 -> quantity: 1)
+    if (blueBuffaloProducts.length > 0) {
+      const product = getRandomItem(blueBuffaloProducts);
+      const quantity = 1;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 7. NextStar Flea and Tick Topical (Redemptions: 2 -> quantity: 2)
+    if (nextStarProducts.length > 0) {
+      const product = getRandomItem(nextStarProducts);
+      const quantity = 2;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 8. OneTouch products (Redemptions: 3 -> quantity: 3)
+    if (oneTouchProducts.length > 0) {
+      const product = getRandomItem(oneTouchProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
     // All offers randomly arranged
     return shuffleArray(items);
   }
@@ -369,8 +466,11 @@ const generateItems = (products, companyName) => {
   // Special case for CVS
   if (companyName === "CVS") {
     const items = [];
-    // Include both OLLY options with redemption 3 each (quantities summing up to 6)
-    for (const product of products) {
+    const ollyProducts = products.filter(p => p.name.includes("OLLY"));
+    const otherProducts = products.filter(p => !p.name.includes("OLLY"));
+
+    // OLLY options with redemption 3 each (quantities summing up to 6)
+    for (const product of ollyProducts) {
       const quantity = 3;
       const price = priceWithVariance(product.price);
       items.push({
@@ -382,7 +482,24 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    return items;
+    // Previous CVS items (Burt's Bees: pick 2, quantity: 2 each)
+    if (otherProducts.length > 0) {
+      const shuffled = [...otherProducts].sort(() => Math.random() - 0.5);
+      const selected = shuffled.slice(0, 2);
+      for (const product of selected) {
+        const quantity = 2;
+        const price = priceWithVariance(product.price);
+        items.push({
+          itemNumber: getRandomInt(10000000, 99999999),
+          name: product.name,
+          quantity,
+          price,
+          total: +(price * quantity).toFixed(2)
+        });
+      }
+    }
+
+    return shuffleArray(items);
   }
 
   // Special case for Tractor Supply

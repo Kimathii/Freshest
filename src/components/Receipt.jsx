@@ -28,6 +28,7 @@ const Receipt = () => {
     "Walmart": "/logos/walmart.png",
     "Chewy": "/logos/chewy.png",
     "WholeFoods": "/logos/wholefoods.png",
+    "Kroger": "/logos/kroger.png",
   };
 
   const barcodeBars = useMemo(() => {
@@ -52,7 +53,7 @@ const Receipt = () => {
           alt={`${receipt.company} logo`}
           className="receipt-logo"
           style={{
-            filter: (receipt.company === "Tractor Supply" || receipt.company === "CVS") ? "grayscale(100%)" : "none",
+            filter: "grayscale(100%)",
             transform: receipt.company === "CVS" ? "scale(1.3)" : "none"
           }}
         />
