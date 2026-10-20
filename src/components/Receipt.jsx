@@ -30,6 +30,8 @@ const Receipt = () => {
     "Chewy": "/logos/chewy.png",
     "WholeFoods": "/logos/wholefoods.png",
     "Kroger": "/logos/kroger.png",
+    "Costco": "/logos/costco.png",
+    "PetSmart": "/logos/petsmart.png",
   };
 
   // barcodeBars removed — barcode is now rendered as a real SVG via BarcodeDisplay / JsBarcode
@@ -50,7 +52,7 @@ const Receipt = () => {
           className="receipt-logo"
           style={{
             filter: "grayscale(100%)",
-            transform: receipt.company === "CVS" ? "scale(1.3)" : "none"
+            transform: receipt.company === "CVS" ? "scale(1.3)" : receipt.company === "Costco" ? "scale(1.5)" : "none"
           }}
         />
       </div>

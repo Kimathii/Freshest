@@ -1,5 +1,4 @@
 // data/companies.js
-// Only 3 brands: Eukanuba Pet Food, Pure Encapsulations, Bacardi Ocho
 
 const companies = [
   // 1. Target
@@ -20,7 +19,9 @@ const companies = [
       { address: "1131 N Beale Rd, Marysville, CA 95901", state: "CA", zip: "95901" }
     ],
     products: [
-      { name: "Righteous Felon O.G. Hickory Beef Sticks, 1 oz, 9 ct", price: 13.99 }
+      // Target keeps its own products (no Righteous Felon — moved to Costco)
+      { name: "Tylenol Extra Strength Caplets (100 ct)", price: 14.99 },
+      { name: "The Honest Company Diapers, Size 4 (25 ct)", price: 14.99 }
     ]
   },
 
@@ -36,7 +37,11 @@ const companies = [
       { address: "600 N Michigan Ave, Chicago, IL 60611", state: "IL" }
     ],
     products: [
-      { name: "Pure Encapsulations O.N.E. Multivitamin, 30 capsules", price: 25.00 }
+      // Pure Encapsulations: Magnesium Glycinate 180 capsules — x3 redemption @ $54.99 each
+      {
+        name: "Pure Encapsulations Magnesium Glycinate - Supports Healthy Muscle Function, Relaxation, Cardiovascular Wellness (180 Capsules)",
+        price: 54.99
+      }
     ]
   },
 
@@ -59,57 +64,36 @@ const companies = [
       { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
     ],
     products: [
-      // Pepsi
-      { "name": "Pepsi Zero Sugar 12-pack", "price": 5.98 },
+      // SheaMoisture Deodorant — x3 redemption @ $35.00 each
+      { "name": "SheaMoisture Fresh Coconut & Hibiscus Antiperspirant Stick (2.6 oz)", "price": 35.00 },
+      { "name": "SheaMoisture Whole Body Deodorant Spray (4 oz)", "price": 35.00 },
 
-      // Chicken
-      { "name": "Freshness Guaranteed Boneless Skinless Chicken Breasts (4.7-6.1 lb tray)", "price": 11.72 },
-      { "name": "Tyson All Natural Fresh Boneless Skinless Chicken Breasts (1.75-3.0 lb tray)", "price": 8.21 },
-      { "name": "Great Value All Natural Frozen Boneless Skinless Chicken Breasts (3 lb)", "price": 8.94 },
-      { "name": "Chicken thighs", "price": 10.99 },
-      { "name": "Chicken tenders", "price": 10.99 },
-      { "name": "Chicken wings", "price": 10.99 },
-      { "name": "Whole chicken", "price": 10.99 },
+      // Merrick Purrfect Bistro Cat Food — spend $10, x3 redemption
+      { "name": "Merrick Purrfect Bistro Grain Free Real Chicken Recipe Dry Cat Food (4 lb)", "price": 10.49 },
+      { "name": "Merrick Purrfect Bistro Grain Free Real Salmon Recipe Dry Cat Food (4 lb)", "price": 10.49 },
+      { "name": "Merrick Purrfect Bistro Wet Cat Food Pouches Variety Pack (3 oz, 12 ct)", "price": 10.99 },
+      { "name": "Merrick Purrfect Bistro Grain Free Real Chicken Recipe Pate Wet Cat Food (5.5 oz, 12 ct)", "price": 10.99 },
 
-      // SheaMoisture Deodorant
-      { "name": "SheaMoisture Fresh Coconut & Hibiscus Antiperspirant Stick (2.6 oz)", "price": 9.97 },
-      { "name": "SheaMoisture Whole Body Deodorant Spray (4 oz)", "price": 9.97 },
+      // NextStar Flea and Tick Topical — x2 redemption @ $70.99 each
+      { "name": "NextStar Flea & Tick Topical for Cats over 3.5 lbs (6-dose, 6-month supply)", "price": 70.99 },
+      { "name": "NextStar Flea & Tick Topical for Dogs 5-22 lbs (6-dose, 6-month supply)", "price": 70.99 },
+      { "name": "NextStar Flea & Tick Topical for Dogs 23-44 lbs (6-dose, 6-month supply)", "price": 70.99 },
+      { "name": "NextStar Flea & Tick Topical for Dogs 45-88 lbs (6-dose, 6-month supply)", "price": 70.99 },
 
-      // Always products (prices adjusted to 15.99 if below 15)
-      { "name": "Always Ultra Thin Size 2 Super Pads with Wings (16 ct)", "price": 15.99 },
-      { "name": "Always Ultra Thin Overnight Pads, Size 4 (13 ct)", "price": 15.99 },
-      { "name": "Always Ultra Thin Size 2 Long Super Pads (42 ct)", "price": 15.99 },
+      // OneTouch Delica Plus Lancets 33g 100ct — x3 redemption
+      { "name": "OneTouch Delica Plus Lancets 33 Gauge, 100 ct", "price": 19.99 },
 
-      // Merrick Dog Treats
-      { "name": "Merrick Oven Baked Peanut Butter Dog Treats (11 oz)", "price": 7.98 },
-      { "name": "Merrick Power Bites Soft Dog Treats (6 oz)", "price": 7.98 },
-      { "name": "Merrick Fresh Kisses Large Dental Dog Treats (11.5 oz, 7 ct)", "price": 15.98 },
-      { "name": "Merrick Healthy Bites", "price": 10.99 },
-      { "name": "Merrick Lil’ Plates Treats", "price": 10.99 },
+      // Qunol Menopause Products — x3 redemption @ $33.33 each (NEW OFFER, leaving soon)
+      { "name": "Qunol Menopause Relief EstroG-100 (60 ct)", "price": 33.33 },
+      { "name": "Qunol Menopause Relief with Cognizin Citicoline (60 ct)", "price": 33.33 },
 
-      // Blue Buffalo Wilderness Bone Broth Boosted Dry Cat Food (5 lb)
-      { "name": "Blue Buffalo Wilderness Bone Broth Boosted Adult Indoor Cat Food, Chicken (5 lb)", "price": 10.99 },
-      { "name": "Blue Buffalo Wilderness Bone Broth Boosted Adult Indoor Cat Food, Salmon (5 lb)", "price": 10.99 },
+      // PetArmor Extend Flea & Tick Collar for Dogs — x1 redemption (replaces Always)
+      { "name": "PetArmor Extend Flea & Tick Collar for Dogs (up to 18 lbs, 8-month protection)", "price": 25.99 },
+      { "name": "PetArmor Extend Flea & Tick Collar for Dogs (over 18 lbs, 8-month protection)", "price": 25.99 },
 
-      // NextStar Flea and Tick Topical
-      { "name": "NextStar Flea & Tick Topical for Cats over 3.5 lbs (1-month)", "price": 17.97 },
-      { "name": "NextStar Flea & Tick Topical for Dogs 5-22 lbs (1-month)", "price": 17.97 },
-      { "name": "NextStar Flea & Tick Topical for Dogs 23-44 lbs (2-pack, 3-month)", "price": 34.96 },
-      { "name": "NextStar Flea & Tick Topical for Dogs 45-88 lbs (2-pack, 3-month)", "price": 34.96 },
-
-      // OneTouch products
-      { "name": "OneTouch Verio Flex Blood Glucose Meter", "price": 22.58 },
-      { "name": "OneTouch Verio Reflect Blood Glucose Meter", "price": 29.86 },
-      { "name": "OneTouch Verio Test Strips (60 ct)", "price": 33.48 },
-      { "name": "OneTouch Verio Test Strips (30 ct)", "price": 18.98 },
-      { "name": "OneTouch Ultra Test Strips (60 ct)", "price": 38.98 },
-      { "name": "OneTouch Ultra 2 Blood Glucose Monitoring System", "price": 23.99 },
-      { "name": "OneTouch Delica Lancing Device Kit", "price": 23.99 },
-      { "name": "OneTouch Delica Plus Lancets (100 ct)", "price": 23.99 },
-      { "name": "OneTouch UltraSoft Lancets (100 ct)", "price": 23.99 },
-      { "name": "OneTouch Ultra Control Solution", "price": 23.99 },
-      { "name": "OneTouch Verio Control Solution", "price": 23.99 },
-      { "name": "OneTouch Verio Reflect System Value Pack", "price": 23.99 }
+      // IBgard Peppermint Oil Capsules — x3 redemption
+      { "name": "IBgard Abdominal Comfort, Peppermint Oil Capsules (12 ct)", "price": 10.97 },
+      { "name": "IBgard Abdominal Comfort, Peppermint Oil Capsules (48 ct)", "price": 27.97 }
     ]
   },
 
@@ -196,16 +180,65 @@ const companies = [
       { address: "81 8th Ave, New York, NY 10011", state: "NY" }
     ],
     products: [
-      // Previous items (Burt's Bees)
-      { name: "Burt’s Bees Lip Balm 4-Pack", price: 13.79 },
-      { name: "Burt’s Bees Micellar Cleansing Water, 8 oz", price: 9.99 },
-      { name: "Burt’s Bees Boosted Lip Balm", price: 7.99 },
-      { name: "Burt’s Bees Hydrating Clary Sage Sheet Mask", price: 3.49 },
-      { name: "Burt’s Bees Tinted Lip Balm", price: 7.99 },
+      // Burt's Bees
+      { name: "Burt's Bees Lip Balm 4-Pack", price: 13.79 },
+      { name: "Burt's Bees Micellar Cleansing Water, 8 oz", price: 9.99 },
+      { name: "Burt's Bees Boosted Lip Balm", price: 7.99 },
+      { name: "Burt's Bees Hydrating Clary Sage Sheet Mask", price: 3.49 },
+      { name: "Burt's Bees Tinted Lip Balm", price: 7.99 },
 
       // OLLY items
       { name: "OLLY Calm Body Wash (17 fl oz)", price: 12.99 },
       { name: "OLLY Calm Body Serum (8 oz)", price: 10.00 }
+    ]
+  },
+
+  // 8. Costco (NEW) — Righteous Felon Beef Sticks, x3 redemption
+  {
+    store: "Costco",
+    name: "Costco",
+    slogan: "Quality you can count on.",
+    phone: "(800) 774-2678",
+    locations: [
+      { address: "1250 N Coral Way, Miami, FL 33145", state: "FL" },
+      { address: "2975 El Camino Real, Santa Clara, CA 95051", state: "CA" },
+      { address: "400 El Camino Real, South San Francisco, CA 94080", state: "CA" },
+      { address: "1801 W Jefferson St, Joliet, IL 60435", state: "IL" },
+      { address: "1500 Technology Dr, San Jose, CA 95110", state: "CA" },
+      { address: "2001 N Interstate 35, Round Rock, TX 78664", state: "TX" },
+      { address: "3700 W Desert Inn Rd, Las Vegas, NV 89102", state: "NV" },
+      { address: "12850 Foothill Blvd, Sylmar, CA 91342", state: "CA" },
+      { address: "200 Costco Way, Issaquah, WA 98027", state: "WA" }
+    ],
+    products: [
+      // Righteous Felon — x3 redemption
+      { name: "Righteous Felon O.G. Hickory Beef Sticks (1 oz, 9 ct)", price: 14.99 },
+      { name: "Righteous Felon Honey Heist BBQ Beef Sticks (1 oz, 9 ct)", price: 14.99 }
+    ]
+  },
+
+  // 9. PetSmart — NextStar Flea & Tick Topical, x2 redemption @ $70.99 each
+  {
+    store: "PetSmart",
+    name: "PetSmart",
+    slogan: "Where Pets Are Family",
+    phone: "(888) 839-9638",
+    locations: [
+      { address: "475 Gateway Dr, Brooklyn, NY 11239", state: "NY" },
+      { address: "2001 NW 117th Ave, Miami, FL 33172", state: "FL" },
+      { address: "3201 S Las Vegas Blvd, Las Vegas, NV 89109", state: "NV" },
+      { address: "1600 E Camelback Rd, Phoenix, AZ 85016", state: "AZ" },
+      { address: "2501 N Germantown Pkwy, Memphis, TN 38133", state: "TN" },
+      { address: "5001 Peachtree Blvd, Atlanta, GA 30341", state: "GA" },
+      { address: "600 Dekalb Pike, Blue Bell, PA 19422", state: "PA" },
+      { address: "13901 N Dale Mabry Hwy, Tampa, FL 33618", state: "FL" }
+    ],
+    products: [
+      // NextStar Flea & Tick Topical — x2 redemption @ $70.99 each
+      { "name": "NextStar Flea & Tick Topical for Cats over 3.5 lbs (6-dose, 6-month supply)", "price": 70.99 },
+      { "name": "NextStar Flea & Tick Topical for Dogs 5-22 lbs (6-dose, 6-month supply)", "price": 70.99 },
+      { "name": "NextStar Flea & Tick Topical for Dogs 23-44 lbs (6-dose, 6-month supply)", "price": 70.99 },
+      { "name": "NextStar Flea & Tick Topical for Dogs 45-88 lbs (6-dose, 6-month supply)", "price": 70.99 }
     ]
   }
 ];

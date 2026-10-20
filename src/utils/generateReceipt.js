@@ -74,7 +74,7 @@ const generateItems = (products, companyName) => {
     });
   }
 
-  // Special case for The Vitamin Shoppe: Pure Encapsulations (Redemptions: 3 -> quantity: 3)
+  // Special case for The Vitamin Shoppe: Pure Encapsulations Magnesium Glycinate (Redemptions: 3 -> quantity: 3)
   if (companyName === "The Vitamin Shoppe") {
     return products.map((product) => {
       const price = priceWithVariance(product.price);
@@ -107,25 +107,6 @@ const generateItems = (products, companyName) => {
   // Special case for Target
   if (companyName === "Target") {
     let items = [];
-
-    // Check if this is Righteous Felon Target
-    const isRighteousFelon = products.some(p => p.name.includes("Righteous Felon"));
-
-    if (isRighteousFelon) {
-      // Righteous Felon (Redemptions: 3 -> quantity: 3)
-      for (const product of products) {
-        const quantity = 3;
-        const price = priceWithVariance(product.price);
-        items.push({
-          itemNumber: getRandomInt(10000000, 99999999),
-          name: product.name,
-          quantity,
-          price,
-          total: +(price * quantity).toFixed(2)
-        });
-      }
-      return items;
-    }
 
     // Check if this is the "Second Target" (Tylenol & Honest)
     // We identify it by checking if the product list contains Tylenol or Honest products
@@ -286,44 +267,15 @@ const generateItems = (products, companyName) => {
     const items = [];
 
     // Filter products by category
-    const pepsiProducts = products.filter(p => p.name.includes("Pepsi"));
-    const chickenProducts = products.filter(p => p.name.toLowerCase().includes("chicken") && !p.name.includes("Blue Buffalo"));
     const sheaProducts = products.filter(p => p.name.includes("SheaMoisture"));
-    const alwaysProducts = products.filter(p => p.name.includes("Always"));
     const merrickProducts = products.filter(p => p.name.includes("Merrick"));
-    const blueBuffaloProducts = products.filter(p => p.name.includes("Blue Buffalo"));
     const nextStarProducts = products.filter(p => p.name.includes("NextStar"));
     const oneTouchProducts = products.filter(p => p.name.includes("OneTouch"));
+    const qunolProducts = products.filter(p => p.name.includes("Qunol"));
+    const petArmorProducts = products.filter(p => p.name.includes("PetArmor"));
+    const ibgardProducts = products.filter(p => p.name.includes("IBgard"));
 
-    // 1. Pepsi (Redemptions: 2 -> quantity: 2)
-    if (pepsiProducts.length > 0) {
-      const product = getRandomItem(pepsiProducts);
-      const quantity = 2;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // 2. Chicken (Redemptions: 2 -> quantity: 2, same receipt as Pepsi)
-    if (chickenProducts.length > 0) {
-      const product = getRandomItem(chickenProducts);
-      const quantity = 2;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // 3. SheaMoisture Deodorant (Redemptions: 3 -> quantity: 3)
+    // 1. SheaMoisture Deodorant (Redemptions: 3 -> quantity: 3, @ $35 each)
     if (sheaProducts.length > 0) {
       const product = getRandomItem(sheaProducts);
       const quantity = 3;
@@ -337,36 +289,7 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // 4. Always products (spend $15 total, two packs each over $15)
-    // Pick 2 packs with quantity: 1 each
-    if (alwaysProducts.length >= 2) {
-      const shuffledAlways = [...alwaysProducts].sort(() => Math.random() - 0.5);
-      const selectedAlways = shuffledAlways.slice(0, 2);
-      for (const product of selectedAlways) {
-        const quantity = 1;
-        const price = priceWithVariance(product.price);
-        items.push({
-          itemNumber: getRandomInt(10000000, 99999999),
-          name: product.name,
-          quantity,
-          price,
-          total: +(price * quantity).toFixed(2)
-        });
-      }
-    } else if (alwaysProducts.length === 1) {
-      const product = alwaysProducts[0];
-      const quantity = 2;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // 5. Merrick Dog Treats (Redemptions: 3 -> quantity: 3)
+    // 2. Merrick Purrfect Bistro Cat Food (spend $10, x3 redemption -> quantity: 3)
     if (merrickProducts.length > 0) {
       const product = getRandomItem(merrickProducts);
       const quantity = 3;
@@ -380,21 +303,7 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // 6. Blue Buffalo Wilderness Bone Broth Boosted Dry Cat Food (Redemptions: 1 -> quantity: 1)
-    if (blueBuffaloProducts.length > 0) {
-      const product = getRandomItem(blueBuffaloProducts);
-      const quantity = 1;
-      const price = priceWithVariance(product.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: product.name,
-        quantity,
-        price,
-        total: +(price * quantity).toFixed(2)
-      });
-    }
-
-    // 7. NextStar Flea and Tick Topical (Redemptions: 2 -> quantity: 2)
+    // 3. NextStar Flea and Tick Topical (Redemptions: 2 -> quantity: 2, @ $70.99 each)
     if (nextStarProducts.length > 0) {
       const product = getRandomItem(nextStarProducts);
       const quantity = 2;
@@ -408,7 +317,7 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // 8. OneTouch products (Redemptions: 3 -> quantity: 3)
+    // 4. OneTouch Delica Plus Lancets 33g 100ct (Redemptions: 3 -> quantity: 3)
     if (oneTouchProducts.length > 0) {
       const product = getRandomItem(oneTouchProducts);
       const quantity = 3;
@@ -422,8 +331,80 @@ const generateItems = (products, companyName) => {
       });
     }
 
+    // 5. Qunol Menopause Products (NEW OFFER — Redemptions: 3 -> quantity: 3, @ $33.33 each)
+    // Pick one randomly from the two Qunol products
+    if (qunolProducts.length > 0) {
+      const product = getRandomItem(qunolProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 6. PetArmor Extend Flea & Tick Collar for Dogs (Redemptions: 1 -> quantity: 1)
+    if (petArmorProducts.length > 0) {
+      const product = getRandomItem(petArmorProducts);
+      const quantity = 1;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 7. IBgard Peppermint Oil Capsules (Redemptions: 3 -> quantity: 3)
+    // Randomly pick either 12ct or 48ct variant
+    if (ibgardProducts.length > 0) {
+      const product = getRandomItem(ibgardProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
     // All offers randomly arranged
     return shuffleArray(items);
+  }
+
+  // Special case for Costco: Righteous Felon Beef Sticks (Redemptions: 3 -> quantity: 3)
+  if (companyName === "Costco") {
+    const product = getRandomItem(products);
+    const price = priceWithVariance(product.price);
+    const quantity = 3;
+    return [{
+      itemNumber: getRandomInt(10000000, 99999999),
+      name: product.name,
+      quantity,
+      price,
+      total: +(price * quantity).toFixed(2)
+    }];
+  }
+
+  // Special case for PetSmart: NextStar Flea & Tick Topical (Redemptions: 2 -> quantity: 2, @ $70.99 each)
+  if (companyName === "PetSmart") {
+    const product = getRandomItem(products);
+    const price = priceWithVariance(product.price);
+    const quantity = 2;
+    return [{
+      itemNumber: getRandomInt(10000000, 99999999),
+      name: product.name,
+      quantity,
+      price,
+      total: +(price * quantity).toFixed(2)
+    }];
   }
 
   // Special case for WholeFoods
