@@ -36,6 +36,10 @@ const generateOrderNumber = () => `#${getRandomInt(10000, 99999)}`;
 const formatDate = () => {
   const d = new Date();
 
+  // Randomize date between 1 and 5 days ago
+  const daysAgo = getRandomInt(1, 5);
+  d.setDate(d.getDate() - daysAgo);
+
   // move clock back 2 hours
   d.setHours(d.getHours() - 2);
 
