@@ -78,19 +78,21 @@ const generateItems = (products, companyName) => {
     });
   }
 
-  // Special case for The Vitamin Shoppe: Pure Encapsulations Magnesium Glycinate (Redemptions: 3 -> quantity: 3)
+  // Special case for The Vitamin Shoppe: Pure Encapsulations Magnesium Glycinate (repeat 3 times instead of x3)
   if (companyName === "The Vitamin Shoppe") {
-    return products.map((product) => {
+    const product = products[0];
+    const items = [];
+    for (let i = 0; i < 3; i++) {
       const price = priceWithVariance(product.price);
-      const quantity = 3;
-      return {
+      items.push({
         itemNumber: getRandomInt(10000000, 99999999),
         name: product.name,
-        quantity,
+        quantity: 1,
         price,
-        total: +(price * quantity).toFixed(2)
-      };
-    });
+        total: price
+      });
+    }
+    return items;
   }
 
   // Special case for Kroger: Orgain Collagen (Redemptions: 3 -> quantity: 3)
@@ -397,31 +399,32 @@ const generateItems = (products, companyName) => {
     }];
   }
 
-  // Special case for PetSmart: NextStar Flea & Tick Topical (Redemptions: 2 -> quantity: 2, @ $70.99 each)
+  // Special case for PetSmart: select one of each Blue Buffalo product @ x1
   if (companyName === "PetSmart") {
-    const product = getRandomItem(products);
-    const price = priceWithVariance(product.price);
-    const quantity = 2;
-    return [{
-      itemNumber: getRandomInt(10000000, 99999999),
-      name: product.name,
-      quantity,
-      price,
-      total: +(price * quantity).toFixed(2)
-    }];
+    return products.map((product) => {
+      const price = priceWithVariance(product.price);
+      const quantity = 1;
+      return {
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: price
+      };
+    });
   }
 
-  // Special case for WholeFoods
-  if (companyName === "WholeFoods") {
+  // Special case for Whole Foods: Solgar (constant x3) + 1 Oars + Alps product (x3)
+  if (companyName === "Whole Foods" || companyName === "WholeFoods") {
     const items = [];
-    const gardenProducts = products.filter(p => p.name.includes("Garden of Life"));
-    const nuunProducts = products.filter(p => p.name.includes("Nuun"));
+    const solgarProducts = products.filter(p => p.name.includes("Solgar"));
+    const oarsProducts = products.filter(p => p.name.includes("Oars + Alps"));
 
-    // 1 Garden of Life (Quantity: 3)
-    if (gardenProducts.length > 0) {
-      const product = getRandomItem(gardenProducts);
-      const quantity = 3;
+    // 1 Solgar (constant, Quantity: 3)
+    if (solgarProducts.length > 0) {
+      const product = solgarProducts[0];
       const price = priceWithVariance(product.price);
+      const quantity = 3;
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),
         name: product.name,
@@ -431,11 +434,11 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // 1 Nuun (Quantity: 3)
-    if (nuunProducts.length > 0) {
-      const product = getRandomItem(nuunProducts);
-      const quantity = 3;
+    // 1 Oars + Alps product (Quantity: 3)
+    if (oarsProducts.length > 0) {
+      const product = getRandomItem(oarsProducts);
       const price = priceWithVariance(product.price);
+      const quantity = 3;
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),
         name: product.name,
@@ -448,13 +451,14 @@ const generateItems = (products, companyName) => {
     return items;
   }
 
-  // Special case for CVS
+  // Special case for CVS: OLLY items (x3), Burt's Bees (pick 2 @ x2), plus 1 Farmacy product (x3)
   if (companyName === "CVS") {
     const items = [];
     const ollyProducts = products.filter(p => p.name.includes("OLLY"));
-    const otherProducts = products.filter(p => !p.name.includes("OLLY"));
+    const burtsProducts = products.filter(p => p.name.includes("Burt's Bees"));
+    const farmacyProducts = products.filter(p => p.name.includes("Farmacy"));
 
-    // OLLY options with redemption 3 each (quantities summing up to 6)
+    // 1. OLLY options with redemption 3 each
     for (const product of ollyProducts) {
       const quantity = 3;
       const price = priceWithVariance(product.price);
@@ -467,9 +471,9 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // Previous CVS items (Burt's Bees: pick 2, quantity: 2 each)
-    if (otherProducts.length > 0) {
-      const shuffled = [...otherProducts].sort(() => Math.random() - 0.5);
+    // 2. Burt's Bees: pick 2, quantity: 2 each
+    if (burtsProducts.length > 0) {
+      const shuffled = [...burtsProducts].sort(() => Math.random() - 0.5);
       const selected = shuffled.slice(0, 2);
       for (const product of selected) {
         const quantity = 2;
@@ -484,48 +488,31 @@ const generateItems = (products, companyName) => {
       }
     }
 
+    // 3. New Farmacy item: select 1 on each receipt, quantity: 3
+    if (farmacyProducts.length > 0) {
+      const product = getRandomItem(farmacyProducts);
+      const quantity = 3;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
     return shuffleArray(items);
   }
 
-  // Special case for Tractor Supply
+  // Special case for Tractor Supply: 1 Eukanuba (x3) + 1 Royal Canin Dog (x1) + 1 Royal Canin Cat (Urinary or Senior) (x3)
   if (companyName === "Tractor Supply") {
     const items = [];
     const eukanubaProducts = products.filter(p => p.name.includes("Eukanuba"));
-    const royalCaninProducts = products.filter(p => p.name.includes("Royal Canin"));
-    const olayProducts = products.filter(p => p.name.includes("Olay"));
+    const rcDogProducts = products.filter(p => p.name.includes("Royal Canin") && !p.name.includes("Urinary") && !p.name.includes("Senior"));
+    const rcCatProducts = products.filter(p => p.name.includes("Urinary") || p.name.includes("Senior"));
 
-    // Third format: Eukanuba x3 + one random Olay
-    if (olayProducts.length > 0) {
-      // 1 Eukanuba product (Quantity: 3)
-      if (eukanubaProducts.length > 0) {
-        const product = getRandomItem(eukanubaProducts);
-        const quantity = 3;
-        const price = priceWithVariance(product.price);
-        items.push({
-          itemNumber: getRandomInt(10000000, 99999999),
-          name: product.name,
-          quantity,
-          price,
-          total: +(price * quantity).toFixed(2)
-        });
-      }
-
-      // 1 random Olay product (Quantity: 1)
-      const olayProduct = getRandomItem(olayProducts);
-      const olayPrice = priceWithVariance(olayProduct.price);
-      items.push({
-        itemNumber: getRandomInt(10000000, 99999999),
-        name: olayProduct.name,
-        quantity: 1,
-        price: olayPrice,
-        total: +olayPrice.toFixed(2)
-      });
-
-      return items;
-    }
-
-    // Original formats: Eukanuba x3 + Royal Canin x1
-    // 1 Eukanuba product (Quantity: 3)
+    // 1. Eukanuba product (Quantity: 3)
     if (eukanubaProducts.length > 0) {
       const product = getRandomItem(eukanubaProducts);
       const quantity = 3;
@@ -539,10 +526,24 @@ const generateItems = (products, companyName) => {
       });
     }
 
-    // 1 Royal Canin product (Quantity: 1)
-    if (royalCaninProducts.length > 0) {
-      const product = getRandomItem(royalCaninProducts);
+    // 2. Royal Canin dog product (Quantity: 1)
+    if (rcDogProducts.length > 0) {
+      const product = getRandomItem(rcDogProducts);
       const quantity = 1;
+      const price = priceWithVariance(product.price);
+      items.push({
+        itemNumber: getRandomInt(10000000, 99999999),
+        name: product.name,
+        quantity,
+        price,
+        total: +(price * quantity).toFixed(2)
+      });
+    }
+
+    // 3. New Royal Canin cat product (Urinary or Senior) (Quantity: 3)
+    if (rcCatProducts.length > 0) {
+      const product = getRandomItem(rcCatProducts);
+      const quantity = 3;
       const price = priceWithVariance(product.price);
       items.push({
         itemNumber: getRandomInt(10000000, 99999999),

@@ -29,6 +29,7 @@ const Receipt = () => {
     "Walmart": "/logos/walmart.png",
     "Chewy": "/logos/chewy.png",
     "WholeFoods": "/logos/wholefoods.png",
+    "Whole Foods": "/logos/wholefoods.png",
     "Kroger": "/logos/kroger.png",
     "Costco": "/logos/costco.png",
     "PetSmart": "/logos/petsmart.png",

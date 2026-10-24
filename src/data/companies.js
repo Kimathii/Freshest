@@ -37,7 +37,7 @@ const companies = [
       { address: "600 N Michigan Ave, Chicago, IL 60611", state: "IL" }
     ],
     products: [
-      // Pure Encapsulations: Magnesium Glycinate 180 capsules — x3 redemption @ $54.99 each
+      // Pure Encapsulations: Magnesium Glycinate 180 capsules — repeat 3 times @ $54.99 each
       {
         name: "Pure Encapsulations Magnesium Glycinate - Supports Healthy Muscle Function, Relaxation, Cardiovascular Wellness (180 Capsules)",
         price: 54.99
@@ -64,34 +64,34 @@ const companies = [
       { address: "9100 International Dr, Orlando, FL 32819", state: "FL" }
     ],
     products: [
-      // SheaMoisture Deodorant — x3 redemption @ $35.00 each
+      // SheaMoisture Deodorant — x3 @ $35.00 each
       { "name": "SheaMoisture Fresh Coconut & Hibiscus Antiperspirant Stick (2.6 oz)", "price": 35.00 },
       { "name": "SheaMoisture Whole Body Deodorant Spray (4 oz)", "price": 35.00 },
 
-      // Merrick Purrfect Bistro Cat Food — spend $10, x3 redemption
+      // Merrick Purrfect Bistro Cat Food — spend $10, x3
       { "name": "Merrick Purrfect Bistro Grain Free Real Chicken Recipe Dry Cat Food (4 lb)", "price": 10.49 },
       { "name": "Merrick Purrfect Bistro Grain Free Real Salmon Recipe Dry Cat Food (4 lb)", "price": 10.49 },
       { "name": "Merrick Purrfect Bistro Wet Cat Food Pouches Variety Pack (3 oz, 12 ct)", "price": 10.99 },
       { "name": "Merrick Purrfect Bistro Grain Free Real Chicken Recipe Pate Wet Cat Food (5.5 oz, 12 ct)", "price": 10.99 },
 
-      // NextStar Flea and Tick Topical — x2 redemption @ $70.99 each
+      // NextStar Flea and Tick Topical — x2 @ $70.99 each
       { "name": "NextStar Flea & Tick Topical for Cats over 3.5 lbs (6-dose, 6-month supply)", "price": 70.99 },
       { "name": "NextStar Flea & Tick Topical for Dogs 5-22 lbs (6-dose, 6-month supply)", "price": 70.99 },
       { "name": "NextStar Flea & Tick Topical for Dogs 23-44 lbs (6-dose, 6-month supply)", "price": 70.99 },
       { "name": "NextStar Flea & Tick Topical for Dogs 45-88 lbs (6-dose, 6-month supply)", "price": 70.99 },
 
-      // OneTouch Delica Plus Lancets 33g 100ct — x3 redemption
+      // OneTouch Delica Plus Lancets 33g 100ct — x3
       { "name": "OneTouch Delica Plus Lancets 33 Gauge, 100 ct", "price": 19.99 },
 
-      // Qunol Menopause Products — x3 redemption @ $33.33 each (NEW OFFER, leaving soon)
+      // Qunol Menopause Products — x3 @ $33.33 each
       { "name": "Qunol Menopause Relief EstroG-100 (60 ct)", "price": 33.33 },
       { "name": "Qunol Menopause Relief with Cognizin Citicoline (60 ct)", "price": 33.33 },
 
-      // PetArmor Extend Flea & Tick Collar for Dogs — x1 redemption (replaces Always)
+      // PetArmor Extend Flea & Tick Collar for Dogs — x1
       { "name": "PetArmor Extend Flea & Tick Collar for Dogs (up to 18 lbs, 8-month protection)", "price": 25.99 },
       { "name": "PetArmor Extend Flea & Tick Collar for Dogs (over 18 lbs, 8-month protection)", "price": 25.99 },
 
-      // IBgard Peppermint Oil Capsules — x3 redemption
+      // IBgard Peppermint Oil Capsules — x3
       { "name": "IBgard Abdominal Comfort, Peppermint Oil Capsules (12 ct)", "price": 10.97 },
       { "name": "IBgard Abdominal Comfort, Peppermint Oil Capsules (48 ct)", "price": 27.97 }
     ]
@@ -158,6 +158,11 @@ const companies = [
       { address: "10870 Balls Ford Rd, Manassas, VA 20109", state: "VA" }
     ],
     products: [
+      // Royal Canin Cat items — x3 @ $65.00 each
+      { name: "Royal Canin Urinary Care (Adult)", price: 65.00 },
+      { name: "Royal Canin Senior Cat Formula", price: 65.00 },
+
+      // Dog products
       { name: "Royal Canin Medium Adult", price: 99.99 },
       { name: "Royal Canin German Shepherd Adult", price: 99.99 },
       { name: "Royal Canin Wet Food tin", price: 49.99 },
@@ -180,6 +185,12 @@ const companies = [
       { address: "81 8th Ave, New York, NY 10011", state: "NY" }
     ],
     products: [
+      // Farmacy — x3
+      { name: "Farmacy Honey Halo", price: 48.00 },
+      { name: "Farmacy Green Clean", price: 39.00 },
+      { name: "Farmacy Honey Milk Essence", price: 34.00 },
+      { name: "Farmacy Brighten Up Toner", price: 34.00 },
+
       // Burt's Bees
       { name: "Burt's Bees Lip Balm 4-Pack", price: 13.79 },
       { name: "Burt's Bees Micellar Cleansing Water, 8 oz", price: 9.99 },
@@ -193,7 +204,7 @@ const companies = [
     ]
   },
 
-  // 8. Costco (NEW) — Righteous Felon Beef Sticks, x3 redemption
+  // 8. Costco — Righteous Felon Beef Sticks, x3
   {
     store: "Costco",
     name: "Costco",
@@ -211,13 +222,12 @@ const companies = [
       { address: "200 Costco Way, Issaquah, WA 98027", state: "WA" }
     ],
     products: [
-      // Righteous Felon — x3 redemption
       { name: "Righteous Felon O.G. Hickory Beef Sticks (1 oz, 9 ct)", price: 14.99 },
       { name: "Righteous Felon Honey Heist BBQ Beef Sticks (1 oz, 9 ct)", price: 14.99 }
     ]
   },
 
-  // 9. PetSmart — NextStar Flea & Tick Topical, x2 redemption @ $70.99 each
+  // 9. PetSmart — Blue Buffalo, select one of each @ x1 ($32.99)
   {
     store: "PetSmart",
     name: "PetSmart",
@@ -234,11 +244,32 @@ const companies = [
       { address: "13901 N Dale Mabry Hwy, Tampa, FL 33618", state: "FL" }
     ],
     products: [
-      // NextStar Flea & Tick Topical — x2 redemption @ $70.99 each
-      { "name": "NextStar Flea & Tick Topical for Cats over 3.5 lbs (6-dose, 6-month supply)", "price": 70.99 },
-      { "name": "NextStar Flea & Tick Topical for Dogs 5-22 lbs (6-dose, 6-month supply)", "price": 70.99 },
-      { "name": "NextStar Flea & Tick Topical for Dogs 23-44 lbs (6-dose, 6-month supply)", "price": 70.99 },
-      { "name": "NextStar Flea & Tick Topical for Dogs 45-88 lbs (6-dose, 6-month supply)", "price": 70.99 }
+      { name: "Blue Buffalo Wilderness Bone Broth Boosted Adult Indoor with Chicken", price: 32.99 },
+      { name: "Blue Buffalo Wilderness Bone Broth Boosted Adult with Salmon", price: 32.99 }
+    ]
+  },
+
+  // 10. Whole Foods
+  {
+    store: "Whole Foods",
+    name: "Whole Foods",
+    slogan: "Whole Foods Market",
+    phone: "(800) 555-0199",
+    locations: [
+      { address: "10 Columbus Circle, New York, NY 10019", state: "NY" },
+      { address: "299 SE 3rd Avenue, Miami, FL 33131", state: "FL" },
+      { address: "255 E Grand Avenue, Chicago, IL 60611", state: "IL" },
+      { address: "788 S Grand Avenue, Los Angeles, CA 90017", state: "CA" },
+      { address: "6701 Red Road, Coral Gables, FL 33143", state: "FL" }
+    ],
+    products: [
+      // Solgar — constant, x3 @ $37.99
+      { name: "Solgar Omega 3 950mg EPA and DHA Triple Strength", price: 37.99 },
+      // Oars + Alps — select one, x3 @ $25.00
+      { name: "Oars + Alps Hydrating Antioxidant Sunscreen", price: 25.00 },
+      { name: "Oars + Alps Go Stick", price: 25.00 },
+      { name: "Oars + Alps Everyday Anti Aging Moisturiser", price: 25.00 },
+      { name: "Oars + Alps Matte Sunscreen Face Stick", price: 25.00 }
     ]
   }
 ];
